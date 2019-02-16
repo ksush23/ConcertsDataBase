@@ -16,6 +16,11 @@ namespace WinFormsConcerts
         {
             InitializeComponent();
             artistsTableAdapter.Fill(concertsDataSet.Artists);
+            concertsTableAdapter.Fill(concertsDataSet.Concerts);
+            ticketsTableAdapter.Fill(concertsDataSet.Tickets);
+            placesTableAdapter.Fill(concertsDataSet.Places);
+            sectorsTableAdapter.Fill(concertsDataSet.Sectors);
+            seatsTableAdapter.Fill(concertsDataSet.Seats);
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -42,22 +47,72 @@ namespace WinFormsConcerts
 
         private void artistsBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            artistsBindingSource.RemoveCurrent();
+            artistsTableAdapter.Update(concertsDataSet.Artists);
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-
+            artistsBindingSource.RemoveCurrent();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void saveConcertsButton_Click(object sender, EventArgs e)
+        {
+            concertsTableAdapter.Update(concertsDataSet.Concerts);
+        }
+
+        private void deleteConcertsButton_Click(object sender, EventArgs e)
+        {
+            concertsBindingSource.RemoveCurrent();
+        }
+
+        private void saveTicketsButton_Click(object sender, EventArgs e)
+        {
+            ticketsTableAdapter.Update(concertsDataSet.Tickets);
+        }
+
+        private void deleteTicketsButton_Click(object sender, EventArgs e)
+        {
+            ticketsBindingSource.RemoveCurrent();
+        }
+
+        private void savePlacesButton_Click(object sender, EventArgs e)
+        {
+            placesTableAdapter.Update(concertsDataSet.Places);
+        }
+
+        private void deletePlacesButton_Click(object sender, EventArgs e)
+        {
+            placesBindingSource.RemoveCurrent();
+        }
+
+        private void saveSectorsButton_Click(object sender, EventArgs e)
+        {
+            sectorsTableAdapter.Update(concertsDataSet.Sectors);
+        }
+
+        private void deleteSectorsButton_Click(object sender, EventArgs e)
+        {
+            sectorsBindingSource.RemoveCurrent();
+        }
+
+        private void saveSeatsButton_Click(object sender, EventArgs e)
+        {
+            seatsTableAdapter.Update(concertsDataSet.Seats);
+        }
+
+        private void deleteSeatsButton_Click(object sender, EventArgs e)
+        {
+            seatsBindingSource.RemoveCurrent();
         }
     }
 }

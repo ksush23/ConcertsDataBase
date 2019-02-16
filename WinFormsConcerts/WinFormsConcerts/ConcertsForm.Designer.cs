@@ -45,7 +45,6 @@
             this.tabPageArtists = new System.Windows.Forms.TabPage();
             this.saveAritistsButton = new System.Windows.Forms.Button();
             this.deleteArtistsButton = new System.Windows.Forms.Button();
-            this.dataGridViewArtists = new System.Windows.Forms.DataGridView();
             this.tabControlConcerts = new System.Windows.Forms.TabControl();
             this.dataGridViewConcerts = new System.Windows.Forms.DataGridView();
             this.concertsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,6 +64,20 @@
             this.seatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.seatLinenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.seatNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewArtist = new System.Windows.Forms.DataGridView();
+            this.artistsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.artistNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistGenreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saveConcertsButton = new System.Windows.Forms.Button();
+            this.deleteConcertsButton = new System.Windows.Forms.Button();
+            this.saveTicketsButton = new System.Windows.Forms.Button();
+            this.deleteTicketsButton = new System.Windows.Forms.Button();
+            this.savePlacesButton = new System.Windows.Forms.Button();
+            this.deletePlacesButton = new System.Windows.Forms.Button();
+            this.saveSectorsButton = new System.Windows.Forms.Button();
+            this.deleteSectorsButton = new System.Windows.Forms.Button();
+            this.saveSeatsButton = new System.Windows.Forms.Button();
+            this.deleteSeatsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.concertsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.concertsDataSet)).BeginInit();
             this.tabPageSeats.SuspendLayout();
@@ -73,7 +86,6 @@
             this.tabPageTickets.SuspendLayout();
             this.tabPageConcerts.SuspendLayout();
             this.tabPageArtists.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtists)).BeginInit();
             this.tabControlConcerts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConcerts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.concertsBindingSource)).BeginInit();
@@ -85,6 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sectorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seatsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artistsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // concertsDataSetBindingSource
@@ -123,6 +137,8 @@
             // 
             // tabPageSeats
             // 
+            this.tabPageSeats.Controls.Add(this.deleteSeatsButton);
+            this.tabPageSeats.Controls.Add(this.saveSeatsButton);
             this.tabPageSeats.Controls.Add(this.dataGridViewSeats);
             this.tabPageSeats.Location = new System.Drawing.Point(4, 25);
             this.tabPageSeats.Name = "tabPageSeats";
@@ -133,6 +149,8 @@
             // 
             // tabPageSectors
             // 
+            this.tabPageSectors.Controls.Add(this.deleteSectorsButton);
+            this.tabPageSectors.Controls.Add(this.saveSectorsButton);
             this.tabPageSectors.Controls.Add(this.dataGridViewSectors);
             this.tabPageSectors.Location = new System.Drawing.Point(4, 25);
             this.tabPageSectors.Name = "tabPageSectors";
@@ -143,6 +161,8 @@
             // 
             // tabPagePlaces
             // 
+            this.tabPagePlaces.Controls.Add(this.deletePlacesButton);
+            this.tabPagePlaces.Controls.Add(this.savePlacesButton);
             this.tabPagePlaces.Controls.Add(this.dataGridViewPlaces);
             this.tabPagePlaces.Location = new System.Drawing.Point(4, 25);
             this.tabPagePlaces.Name = "tabPagePlaces";
@@ -153,16 +173,20 @@
             // 
             // tabPageTickets
             // 
+            this.tabPageTickets.Controls.Add(this.deleteTicketsButton);
+            this.tabPageTickets.Controls.Add(this.saveTicketsButton);
             this.tabPageTickets.Controls.Add(this.dataGridViewTickets);
             this.tabPageTickets.Location = new System.Drawing.Point(4, 25);
             this.tabPageTickets.Name = "tabPageTickets";
-            this.tabPageTickets.Size = new System.Drawing.Size(784, 414);
+            this.tabPageTickets.Size = new System.Drawing.Size(784, 448);
             this.tabPageTickets.TabIndex = 2;
             this.tabPageTickets.Text = "Білети";
             this.tabPageTickets.UseVisualStyleBackColor = true;
             // 
             // tabPageConcerts
             // 
+            this.tabPageConcerts.Controls.Add(this.deleteConcertsButton);
+            this.tabPageConcerts.Controls.Add(this.saveConcertsButton);
             this.tabPageConcerts.Controls.Add(this.dataGridViewConcerts);
             this.tabPageConcerts.Location = new System.Drawing.Point(4, 25);
             this.tabPageConcerts.Name = "tabPageConcerts";
@@ -174,7 +198,7 @@
             // 
             // tabPageArtists
             // 
-            this.tabPageArtists.Controls.Add(this.dataGridViewArtists);
+            this.tabPageArtists.Controls.Add(this.dataGridViewArtist);
             this.tabPageArtists.Controls.Add(this.deleteArtistsButton);
             this.tabPageArtists.Controls.Add(this.saveAritistsButton);
             this.tabPageArtists.Location = new System.Drawing.Point(4, 25);
@@ -206,19 +230,6 @@
             this.deleteArtistsButton.UseVisualStyleBackColor = true;
             this.deleteArtistsButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // dataGridViewArtists
-            // 
-            this.dataGridViewArtists.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewArtists.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewArtists.Location = new System.Drawing.Point(6, 46);
-            this.dataGridViewArtists.Name = "dataGridViewArtists";
-            this.dataGridViewArtists.RowTemplate.Height = 24;
-            this.dataGridViewArtists.Size = new System.Drawing.Size(772, 402);
-            this.dataGridViewArtists.TabIndex = 4;
-            this.dataGridViewArtists.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
             // tabControlConcerts
             // 
             this.tabControlConcerts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -246,7 +257,7 @@
             this.dataGridViewConcerts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.concertTimeDateDataGridViewTextBoxColumn});
             this.dataGridViewConcerts.DataSource = this.concertsBindingSource;
-            this.dataGridViewConcerts.Location = new System.Drawing.Point(0, 7);
+            this.dataGridViewConcerts.Location = new System.Drawing.Point(3, 48);
             this.dataGridViewConcerts.Name = "dataGridViewConcerts";
             this.dataGridViewConcerts.RowTemplate.Height = 24;
             this.dataGridViewConcerts.Size = new System.Drawing.Size(784, 438);
@@ -274,10 +285,10 @@
             this.ticketStateIDDataGridViewTextBoxColumn,
             this.ticketPriceDataGridViewTextBoxColumn});
             this.dataGridViewTickets.DataSource = this.ticketsBindingSource;
-            this.dataGridViewTickets.Location = new System.Drawing.Point(0, 3);
+            this.dataGridViewTickets.Location = new System.Drawing.Point(0, 46);
             this.dataGridViewTickets.Name = "dataGridViewTickets";
             this.dataGridViewTickets.RowTemplate.Height = 24;
-            this.dataGridViewTickets.Size = new System.Drawing.Size(777, 387);
+            this.dataGridViewTickets.Size = new System.Drawing.Size(777, 378);
             this.dataGridViewTickets.TabIndex = 0;
             // 
             // ticketsBindingSource
@@ -325,10 +336,10 @@
             this.placeNameDataGridViewTextBoxColumn,
             this.placeAddressDataGridViewTextBoxColumn});
             this.dataGridViewPlaces.DataSource = this.placesBindingSource;
-            this.dataGridViewPlaces.Location = new System.Drawing.Point(4, 4);
+            this.dataGridViewPlaces.Location = new System.Drawing.Point(4, 48);
             this.dataGridViewPlaces.Name = "dataGridViewPlaces";
             this.dataGridViewPlaces.RowTemplate.Height = 24;
-            this.dataGridViewPlaces.Size = new System.Drawing.Size(768, 431);
+            this.dataGridViewPlaces.Size = new System.Drawing.Size(768, 387);
             this.dataGridViewPlaces.TabIndex = 0;
             // 
             // dataGridViewSectors
@@ -369,10 +380,10 @@
             this.seatLinenumberDataGridViewTextBoxColumn,
             this.seatNumberDataGridViewTextBoxColumn});
             this.dataGridViewSeats.DataSource = this.seatsBindingSource;
-            this.dataGridViewSeats.Location = new System.Drawing.Point(3, 29);
+            this.dataGridViewSeats.Location = new System.Drawing.Point(3, 42);
             this.dataGridViewSeats.Name = "dataGridViewSeats";
             this.dataGridViewSeats.RowTemplate.Height = 24;
-            this.dataGridViewSeats.Size = new System.Drawing.Size(769, 406);
+            this.dataGridViewSeats.Size = new System.Drawing.Size(769, 393);
             this.dataGridViewSeats.TabIndex = 0;
             // 
             // seatsBindingSource
@@ -392,6 +403,140 @@
             this.seatNumberDataGridViewTextBoxColumn.HeaderText = "Номер сидіння";
             this.seatNumberDataGridViewTextBoxColumn.Name = "seatNumberDataGridViewTextBoxColumn";
             // 
+            // dataGridViewArtist
+            // 
+            this.dataGridViewArtist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewArtist.AutoGenerateColumns = false;
+            this.dataGridViewArtist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewArtist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.artistNameDataGridViewTextBoxColumn,
+            this.artistGenreDataGridViewTextBoxColumn});
+            this.dataGridViewArtist.DataSource = this.artistsBindingSource;
+            this.dataGridViewArtist.Location = new System.Drawing.Point(4, 47);
+            this.dataGridViewArtist.Name = "dataGridViewArtist";
+            this.dataGridViewArtist.RowTemplate.Height = 24;
+            this.dataGridViewArtist.Size = new System.Drawing.Size(768, 388);
+            this.dataGridViewArtist.TabIndex = 3;
+            // 
+            // artistsBindingSource
+            // 
+            this.artistsBindingSource.DataMember = "Artists";
+            this.artistsBindingSource.DataSource = this.concertsDataSet;
+            // 
+            // artistNameDataGridViewTextBoxColumn
+            // 
+            this.artistNameDataGridViewTextBoxColumn.DataPropertyName = "Artist_Name";
+            this.artistNameDataGridViewTextBoxColumn.HeaderText = "Назва";
+            this.artistNameDataGridViewTextBoxColumn.Name = "artistNameDataGridViewTextBoxColumn";
+            // 
+            // artistGenreDataGridViewTextBoxColumn
+            // 
+            this.artistGenreDataGridViewTextBoxColumn.DataPropertyName = "Artist_Genre";
+            this.artistGenreDataGridViewTextBoxColumn.HeaderText = "Жанр";
+            this.artistGenreDataGridViewTextBoxColumn.Name = "artistGenreDataGridViewTextBoxColumn";
+            // 
+            // saveConcertsButton
+            // 
+            this.saveConcertsButton.Location = new System.Drawing.Point(15, 6);
+            this.saveConcertsButton.Name = "saveConcertsButton";
+            this.saveConcertsButton.Size = new System.Drawing.Size(97, 36);
+            this.saveConcertsButton.TabIndex = 1;
+            this.saveConcertsButton.Text = "Зберегти";
+            this.saveConcertsButton.UseVisualStyleBackColor = true;
+            this.saveConcertsButton.Click += new System.EventHandler(this.saveConcertsButton_Click);
+            // 
+            // deleteConcertsButton
+            // 
+            this.deleteConcertsButton.Location = new System.Drawing.Point(130, 7);
+            this.deleteConcertsButton.Name = "deleteConcertsButton";
+            this.deleteConcertsButton.Size = new System.Drawing.Size(94, 35);
+            this.deleteConcertsButton.TabIndex = 2;
+            this.deleteConcertsButton.Text = "Видалити";
+            this.deleteConcertsButton.UseVisualStyleBackColor = true;
+            this.deleteConcertsButton.Click += new System.EventHandler(this.deleteConcertsButton_Click);
+            // 
+            // saveTicketsButton
+            // 
+            this.saveTicketsButton.Location = new System.Drawing.Point(20, 3);
+            this.saveTicketsButton.Name = "saveTicketsButton";
+            this.saveTicketsButton.Size = new System.Drawing.Size(86, 37);
+            this.saveTicketsButton.TabIndex = 1;
+            this.saveTicketsButton.Text = "Зберегти";
+            this.saveTicketsButton.UseVisualStyleBackColor = true;
+            this.saveTicketsButton.Click += new System.EventHandler(this.saveTicketsButton_Click);
+            // 
+            // deleteTicketsButton
+            // 
+            this.deleteTicketsButton.Location = new System.Drawing.Point(124, 3);
+            this.deleteTicketsButton.Name = "deleteTicketsButton";
+            this.deleteTicketsButton.Size = new System.Drawing.Size(89, 36);
+            this.deleteTicketsButton.TabIndex = 2;
+            this.deleteTicketsButton.Text = "Видалити";
+            this.deleteTicketsButton.UseVisualStyleBackColor = true;
+            this.deleteTicketsButton.Click += new System.EventHandler(this.deleteTicketsButton_Click);
+            // 
+            // savePlacesButton
+            // 
+            this.savePlacesButton.Location = new System.Drawing.Point(19, 3);
+            this.savePlacesButton.Name = "savePlacesButton";
+            this.savePlacesButton.Size = new System.Drawing.Size(101, 39);
+            this.savePlacesButton.TabIndex = 1;
+            this.savePlacesButton.Text = "Зберегти";
+            this.savePlacesButton.UseVisualStyleBackColor = true;
+            this.savePlacesButton.Click += new System.EventHandler(this.savePlacesButton_Click);
+            // 
+            // deletePlacesButton
+            // 
+            this.deletePlacesButton.Location = new System.Drawing.Point(137, 3);
+            this.deletePlacesButton.Name = "deletePlacesButton";
+            this.deletePlacesButton.Size = new System.Drawing.Size(96, 38);
+            this.deletePlacesButton.TabIndex = 2;
+            this.deletePlacesButton.Text = "Видалити";
+            this.deletePlacesButton.UseVisualStyleBackColor = true;
+            this.deletePlacesButton.Click += new System.EventHandler(this.deletePlacesButton_Click);
+            // 
+            // saveSectorsButton
+            // 
+            this.saveSectorsButton.Location = new System.Drawing.Point(20, 13);
+            this.saveSectorsButton.Name = "saveSectorsButton";
+            this.saveSectorsButton.Size = new System.Drawing.Size(86, 30);
+            this.saveSectorsButton.TabIndex = 1;
+            this.saveSectorsButton.Text = "Зберегти";
+            this.saveSectorsButton.UseVisualStyleBackColor = true;
+            this.saveSectorsButton.Click += new System.EventHandler(this.saveSectorsButton_Click);
+            // 
+            // deleteSectorsButton
+            // 
+            this.deleteSectorsButton.Location = new System.Drawing.Point(129, 13);
+            this.deleteSectorsButton.Name = "deleteSectorsButton";
+            this.deleteSectorsButton.Size = new System.Drawing.Size(85, 30);
+            this.deleteSectorsButton.TabIndex = 2;
+            this.deleteSectorsButton.Text = "Видалити";
+            this.deleteSectorsButton.UseVisualStyleBackColor = true;
+            this.deleteSectorsButton.Click += new System.EventHandler(this.deleteSectorsButton_Click);
+            // 
+            // saveSeatsButton
+            // 
+            this.saveSeatsButton.Location = new System.Drawing.Point(24, 3);
+            this.saveSeatsButton.Name = "saveSeatsButton";
+            this.saveSeatsButton.Size = new System.Drawing.Size(84, 33);
+            this.saveSeatsButton.TabIndex = 1;
+            this.saveSeatsButton.Text = "Зберегти";
+            this.saveSeatsButton.UseVisualStyleBackColor = true;
+            this.saveSeatsButton.Click += new System.EventHandler(this.saveSeatsButton_Click);
+            // 
+            // deleteSeatsButton
+            // 
+            this.deleteSeatsButton.Location = new System.Drawing.Point(124, 3);
+            this.deleteSeatsButton.Name = "deleteSeatsButton";
+            this.deleteSeatsButton.Size = new System.Drawing.Size(94, 32);
+            this.deleteSeatsButton.TabIndex = 2;
+            this.deleteSeatsButton.Text = "Видалити";
+            this.deleteSeatsButton.UseVisualStyleBackColor = true;
+            this.deleteSeatsButton.Click += new System.EventHandler(this.deleteSeatsButton_Click);
+            // 
             // ConcertsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -410,7 +555,6 @@
             this.tabPageTickets.ResumeLayout(false);
             this.tabPageConcerts.ResumeLayout(false);
             this.tabPageArtists.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtists)).EndInit();
             this.tabControlConcerts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConcerts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.concertsBindingSource)).EndInit();
@@ -422,6 +566,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sectorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeats)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seatsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artistsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,7 +595,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn concertTimeDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource concertsBindingSource;
         private System.Windows.Forms.TabPage tabPageArtists;
-        private System.Windows.Forms.DataGridView dataGridViewArtists;
         private System.Windows.Forms.Button deleteArtistsButton;
         private System.Windows.Forms.Button saveAritistsButton;
         private System.Windows.Forms.TabControl tabControlConcerts;
@@ -463,6 +608,20 @@
         private System.Windows.Forms.DataGridView dataGridViewPlaces;
         private System.Windows.Forms.DataGridViewTextBoxColumn placeNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn placeAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridViewArtist;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artistNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artistGenreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource artistsBindingSource;
+        private System.Windows.Forms.Button saveConcertsButton;
+        private System.Windows.Forms.Button deleteConcertsButton;
+        private System.Windows.Forms.Button deleteTicketsButton;
+        private System.Windows.Forms.Button saveTicketsButton;
+        private System.Windows.Forms.Button savePlacesButton;
+        private System.Windows.Forms.Button deletePlacesButton;
+        private System.Windows.Forms.Button deleteSectorsButton;
+        private System.Windows.Forms.Button saveSectorsButton;
+        private System.Windows.Forms.Button deleteSeatsButton;
+        private System.Windows.Forms.Button saveSeatsButton;
     }
 }
 
