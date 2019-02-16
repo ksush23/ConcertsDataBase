@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WinFormsConcerts
 {
-    public partial class Form1 : Form
+    public partial class ConcertsForm : Form
     {
-        public Form1()
+        public ConcertsForm()
         {
             InitializeComponent();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
