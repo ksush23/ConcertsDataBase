@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DSConcerts.cs">
+      <DependentUpon>DSConcerts.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSConcerts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

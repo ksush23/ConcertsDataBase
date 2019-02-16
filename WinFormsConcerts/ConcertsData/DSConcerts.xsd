@@ -118,7 +118,18 @@ SELECT Concert_ID, Concert_TimeDate, Concert_Artist_ID, Concert_Place_ID FROM Co
               <Mapping SourceColumn="Concert_Artist_ID" DataSetColumn="Concert_Artist_ID" />
               <Mapping SourceColumn="Concert_Place_ID" DataSetColumn="Concert_Place_ID" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="ConcertsConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="SQCount_Concerts_Place_ID" Modifier="Public" Name="SQCount_Concerts_Place_ID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SQCount_Concerts_Place_ID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT COUNT(Concerts.Concert_Place_ID) AS Expr1
+FROM     Concerts INNER JOIN
+                  Places ON Concerts.Concert_Place_ID = Places.Place_ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ArtistsTableAdapter" GeneratorDataComponentClassName="ArtistsTableAdapter" Name="Artists" UserDataComponentName="ArtistsTableAdapter">
             <MainSource>

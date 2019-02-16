@@ -92,6 +92,11 @@ namespace WinFormsConcerts
 
         private void deletePlacesButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int id = (int)dataGridViewArtist.CurrentRow.Cells["arIDDataGridViewTextBoxColumn"].Value;
+                global::System.Nullable<int> artist_count = concertsTableAdapter.
+            }
             placesBindingSource.RemoveCurrent();
         }
 

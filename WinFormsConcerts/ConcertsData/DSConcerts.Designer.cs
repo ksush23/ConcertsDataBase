@@ -3985,12 +3985,17 @@ SELECT Concert_ID, Concert_TimeDate, Concert_Artist_ID, Concert_Place_ID FROM Co
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Concert_ID, Concert_TimeDate, Concert_Artist_ID, Concert_Place_ID FROM dbo" +
                 ".Concerts";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT COUNT(Concerts.Concert_Place_ID) AS Expr1\r\nFROM     Concerts INNER JOIN\r\n " +
+                "                 Places ON Concerts.Concert_Place_ID = Places.Place_ID";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4155,6 +4160,34 @@ SELECT Concert_ID, Concert_TimeDate, Concert_Artist_ID, Concert_Place_ID FROM Co
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<global::System.DateTime> Concert_TimeDate, int Concert_Artist_ID, int Concert_Place_ID, int Original_Concert_ID, global::System.Nullable<global::System.DateTime> Original_Concert_TimeDate, int Original_Concert_Artist_ID, int Original_Concert_Place_ID) {
             return this.Update(Original_Concert_ID, Concert_TimeDate, Concert_Artist_ID, Concert_Place_ID, Original_Concert_ID, Original_Concert_TimeDate, Original_Concert_Artist_ID, Original_Concert_Place_ID);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object SQCount_Concerts_Place_ID() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     
