@@ -15,6 +15,7 @@ namespace WinFormsConcerts
         public ConcertsForm()
         {
             InitializeComponent();
+            artistsTableAdapter.Fill(concertsDataSet.Artists);
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -36,6 +37,26 @@ namespace WinFormsConcerts
             this.concertsTableAdapter.Fill(this.concertsDataSet.Concerts);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "concertsDataSet.Artists". При необходимости она может быть перемещена или удалена.
             this.artistsTableAdapter.Fill(this.concertsDataSet.Artists);
+
+        }
+
+        private void artistsBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            artistsBindingSource.RemoveCurrent();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
