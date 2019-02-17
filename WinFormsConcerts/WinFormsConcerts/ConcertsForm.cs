@@ -92,12 +92,33 @@ namespace WinFormsConcerts
 
         private void deletePlacesButton_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
-                int id = (int)dataGridViewArtist.CurrentRow.Cells["arIDDataGridViewTextBoxColumn"].Value;
-                global::System.Nullable<int> artist_count = 
-            }*/
-            placesBindingSource.RemoveCurrent();
+                int id = (int)dataGridViewArtist.CurrentRow.Cells["artistNameDataGridViewTextBoxColumn"].Value;
+                global::System.Nullable<int> concerts_places_count = (int)qtAdapter.SQ_Concerts_Places_ID_Count(id);
+
+                if (concerts_places_count == 0)
+                    placesBindingSource.RemoveCurrent();
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Ви впевнені, що хочете видалити місце проведення, на яке є посилання?", "", MessageBoxButtons.YesNo);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        placesBindingSource.RemoveCurrent();
+                        for (int i = 0; i < dataGridViewConcerts.ColumnCount; i++)
+                        {
+                            if (id == Convert.ToInt32(Concert_Place_ID.ToString()))
+                                concertsBindingSource.Remove(i);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Помилка видалення місця проведення!");
+            }
+            
         }
 
         private void saveSectorsButton_Click(object sender, EventArgs e)
@@ -118,6 +139,16 @@ namespace WinFormsConcerts
         private void deleteSeatsButton_Click(object sender, EventArgs e)
         {
             seatsBindingSource.RemoveCurrent();
+        }
+
+        private void concertsDataSetBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewConcerts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
