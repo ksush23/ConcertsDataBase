@@ -57,7 +57,32 @@ namespace WinFormsConcerts
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            artistsBindingSource.RemoveCurrent();
+            try
+            {
+                int id = (int)dataGridViewArtist.CurrentRow.Cells["Artist_ID"].Value;
+                global::System.Nullable<int> concerts_artist_count = (int)qtAdapter.SQ_Count_Concert_Artist_ID(id);
+
+                if (concerts_artist_count == 0)
+                    artistsBindingSource.RemoveCurrent();
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Ви впевнені, що хочете видалити виконавця, на якого є посилання?", "", MessageBoxButtons.YesNo);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        artistsBindingSource.RemoveCurrent();
+                        for (int i = 0; i < dataGridViewConcerts.RowCount - 1; i++)
+                        {
+                            if (id == (int)dataGridViewConcerts.Rows[i].Cells["Concert_Artist_ID"].Value)
+                                concertsBindingSource.RemoveAt(i);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Помилка видалення виконавця!");
+            }
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -72,7 +97,32 @@ namespace WinFormsConcerts
 
         private void deleteConcertsButton_Click(object sender, EventArgs e)
         {
-            concertsBindingSource.RemoveCurrent();
+            try
+            {
+                int id = (int)dataGridViewConcerts.CurrentRow.Cells["Concert_ID"].Value;
+                global::System.Nullable<int> tickets_concerts_count = (int)qtAdapter.SQ_Count_Ticket_Concert_ID(id);
+
+                if (tickets_concerts_count == 0)
+                    concertsBindingSource.RemoveCurrent();
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Ви впевнені, що хочете видалити концерт, на який є посилання?", "", MessageBoxButtons.YesNo);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        concertsBindingSource.RemoveCurrent();
+                        for (int i = 0; i < dataGridViewTickets.RowCount - 1; i++)
+                        {
+                            if (id == (int)dataGridViewTickets.Rows[i].Cells["Ticket_Concert_ID"].Value)
+                                ticketsBindingSource.RemoveAt(i);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Помилка видалення місця проведення!");
+            }
         }
 
         private void saveTicketsButton_Click(object sender, EventArgs e)
@@ -96,8 +146,9 @@ namespace WinFormsConcerts
             {
                 int id = (int)dataGridViewPlaces.CurrentRow.Cells["Place_ID"].Value;
                 global::System.Nullable<int> concerts_places_count = (int)qtAdapter.SQ_Concerts_Places_ID_Count(id);
+                global::System.Nullable<int> sectors_places_count = (int)qtAdapter.SQ_Count_Sector_Place_ID(id);
 
-                if (concerts_places_count == 0)
+                if (concerts_places_count == 0 && sectors_places_count == 0)
                     placesBindingSource.RemoveCurrent();
                 else
                 {
@@ -106,11 +157,20 @@ namespace WinFormsConcerts
                     if (dialogResult == DialogResult.Yes)
                     {
                         placesBindingSource.RemoveCurrent();
-                        for (int i = 0; i < dataGridViewConcerts.RowCount - 1; i++)
-                        {
-                            if (id == (int)dataGridViewConcerts.Rows[i].Cells["Concert_Place_ID"].Value)
-                                concertsBindingSource.RemoveAt(i);
-                        }
+
+                        if (concerts_places_count == 0)
+                            for (int i = 0; i < dataGridViewConcerts.RowCount - 1; i++)
+                            {
+                                if (id == (int)dataGridViewConcerts.Rows[i].Cells["Concert_Place_ID"].Value)
+                                    concertsBindingSource.RemoveAt(i);
+                            }
+
+                        if (sectors_places_count == 0)
+                            for (int i = 0; i < dataGridViewSectors.RowCount - 1; i++)
+                            {
+                                if (id == (int)dataGridViewSectors.Rows[i].Cells["Sector_Place_ID"].Value)
+                                    sectorsBindingSource.RemoveAt(i);
+                            }
                     }
                 }
             }
@@ -128,7 +188,32 @@ namespace WinFormsConcerts
 
         private void deleteSectorsButton_Click(object sender, EventArgs e)
         {
-            sectorsBindingSource.RemoveCurrent();
+            try
+            {
+                int id = (int)dataGridViewSectors.CurrentRow.Cells["Sectors_ID"].Value;
+                global::System.Nullable<int> seats_sectors_count = (int)qtAdapter.SQ_Count_Seat_Sector_ID(id);
+
+                if (seats_sectors_count == 0)
+                    sectorsBindingSource.RemoveCurrent();
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Ви впевнені, що хочете видалити сектор, на який є посилання?", "", MessageBoxButtons.YesNo);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        sectorsBindingSource.RemoveCurrent();
+                        for (int i = 0; i < dataGridViewSeats.RowCount - 1; i++)
+                        {
+                            if (id == (int)dataGridViewSeats.Rows[i].Cells["Seat_Sector_ID"].Value)
+                                seatsBindingSource.RemoveAt(i);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Помилка видалення сектора!");
+            }
         }
 
         private void saveSeatsButton_Click(object sender, EventArgs e)
@@ -138,7 +223,32 @@ namespace WinFormsConcerts
 
         private void deleteSeatsButton_Click(object sender, EventArgs e)
         {
-            seatsBindingSource.RemoveCurrent();
+            try
+            {
+                int id = (int)dataGridViewSeats.CurrentRow.Cells["Seats_ID"].Value;
+                global::System.Nullable<int> tickets_seats_count = (int)qtAdapter.SQ_Count_Ticket_Seat_ID(id);
+
+                if (tickets_seats_count == 0)
+                    seatsBindingSource.RemoveCurrent();
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Ви впевнені, що хочете видалити місце, на яке є посилання?", "", MessageBoxButtons.YesNo);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        seatsBindingSource.RemoveCurrent();
+                        for (int i = 0; i < dataGridViewTickets.RowCount - 1; i++)
+                        {
+                            if (id == (int)dataGridViewTickets.Rows[i].Cells["Ticket_Seat_ID"].Value)
+                                ticketsBindingSource.RemoveAt(i);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Помилка видалення місця!");
+            }
         }
 
         private void concertsDataSetBindingSource_CurrentChanged(object sender, EventArgs e)
