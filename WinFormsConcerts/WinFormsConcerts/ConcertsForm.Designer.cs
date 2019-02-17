@@ -53,8 +53,6 @@
             this.deletePlacesButton = new System.Windows.Forms.Button();
             this.savePlacesButton = new System.Windows.Forms.Button();
             this.dataGridViewPlaces = new System.Windows.Forms.DataGridView();
-            this.placeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placeAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageTickets = new System.Windows.Forms.TabPage();
             this.deleteTicketsButton = new System.Windows.Forms.Button();
@@ -77,7 +75,6 @@
             this.deleteArtistsButton = new System.Windows.Forms.Button();
             this.saveAritistsButton = new System.Windows.Forms.Button();
             this.tabControlConcerts = new System.Windows.Forms.TabControl();
-            this.qtAdapter = new ConcertsData.DSConcertsTableAdapters.QTAdapter();
             this.Ticket_Concert_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ticket_Seat_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sectorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,6 +82,10 @@
             this.Seat_Sector_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Concert_Artist_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Concert_Place_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtAdapter = new ConcertsData.DSConcertsTableAdapters.QTAdapter();
+            this.placeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placeAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Place_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.concertsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.concertsDataSet)).BeginInit();
             this.tabPageSeats.SuspendLayout();
@@ -305,25 +306,14 @@
             this.dataGridViewPlaces.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPlaces.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.placeNameDataGridViewTextBoxColumn,
-            this.placeAddressDataGridViewTextBoxColumn});
+            this.placeAddressDataGridViewTextBoxColumn,
+            this.Place_ID});
             this.dataGridViewPlaces.DataSource = this.placesBindingSource;
             this.dataGridViewPlaces.Location = new System.Drawing.Point(4, 48);
             this.dataGridViewPlaces.Name = "dataGridViewPlaces";
             this.dataGridViewPlaces.RowTemplate.Height = 24;
             this.dataGridViewPlaces.Size = new System.Drawing.Size(768, 387);
             this.dataGridViewPlaces.TabIndex = 0;
-            // 
-            // placeNameDataGridViewTextBoxColumn
-            // 
-            this.placeNameDataGridViewTextBoxColumn.DataPropertyName = "Place_Name";
-            this.placeNameDataGridViewTextBoxColumn.HeaderText = "Назва";
-            this.placeNameDataGridViewTextBoxColumn.Name = "placeNameDataGridViewTextBoxColumn";
-            // 
-            // placeAddressDataGridViewTextBoxColumn
-            // 
-            this.placeAddressDataGridViewTextBoxColumn.DataPropertyName = "Place_Address";
-            this.placeAddressDataGridViewTextBoxColumn.HeaderText = "Адреса";
-            this.placeAddressDataGridViewTextBoxColumn.Name = "placeAddressDataGridViewTextBoxColumn";
             // 
             // placesBindingSource
             // 
@@ -588,6 +578,24 @@
             this.Concert_Place_ID.HeaderText = "Місце проведення";
             this.Concert_Place_ID.Name = "Concert_Place_ID";
             // 
+            // placeNameDataGridViewTextBoxColumn
+            // 
+            this.placeNameDataGridViewTextBoxColumn.DataPropertyName = "Place_Name";
+            this.placeNameDataGridViewTextBoxColumn.HeaderText = "Назва";
+            this.placeNameDataGridViewTextBoxColumn.Name = "placeNameDataGridViewTextBoxColumn";
+            // 
+            // placeAddressDataGridViewTextBoxColumn
+            // 
+            this.placeAddressDataGridViewTextBoxColumn.DataPropertyName = "Place_Address";
+            this.placeAddressDataGridViewTextBoxColumn.HeaderText = "Адреса";
+            this.placeAddressDataGridViewTextBoxColumn.Name = "placeAddressDataGridViewTextBoxColumn";
+            // 
+            // Place_ID
+            // 
+            this.Place_ID.DataPropertyName = "Place_ID";
+            this.Place_ID.HeaderText = "Place_ID";
+            this.Place_ID.Name = "Place_ID";
+            // 
             // ConcertsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -656,8 +664,6 @@
         private System.Windows.Forms.DataGridView dataGridViewSectors;
         private System.Windows.Forms.BindingSource sectorsBindingSource;
         private System.Windows.Forms.DataGridView dataGridViewPlaces;
-        private System.Windows.Forms.DataGridViewTextBoxColumn placeNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn placeAddressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridViewArtist;
         private System.Windows.Forms.DataGridViewTextBoxColumn artistNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn artistGenreDataGridViewTextBoxColumn;
@@ -680,6 +686,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sector_Place_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Concert_Artist_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Concert_Place_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn placeNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn placeAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Place_ID;
     }
 }
 

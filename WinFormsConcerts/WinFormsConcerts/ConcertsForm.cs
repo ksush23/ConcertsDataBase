@@ -94,7 +94,7 @@ namespace WinFormsConcerts
         {
             try
             {
-                int id = (int)dataGridViewArtist.CurrentRow.Cells["artistNameDataGridViewTextBoxColumn"].Value;
+                int id = (int)dataGridViewPlaces.CurrentRow.Cells["Place_ID"].Value;
                 global::System.Nullable<int> concerts_places_count = (int)qtAdapter.SQ_Concerts_Places_ID_Count(id);
 
                 if (concerts_places_count == 0)
@@ -106,10 +106,10 @@ namespace WinFormsConcerts
                     if (dialogResult == DialogResult.Yes)
                     {
                         placesBindingSource.RemoveCurrent();
-                        for (int i = 0; i < dataGridViewConcerts.ColumnCount; i++)
+                        for (int i = 0; i < dataGridViewConcerts.RowCount - 1; i++)
                         {
-                            if (id == Convert.ToInt32(Concert_Place_ID.ToString()))
-                                concertsBindingSource.Remove(i);
+                            if (id == (int)dataGridViewConcerts.Rows[i].Cells["Concert_Place_ID"].Value)
+                                concertsBindingSource.RemoveAt(i);
                         }
                     }
                 }
