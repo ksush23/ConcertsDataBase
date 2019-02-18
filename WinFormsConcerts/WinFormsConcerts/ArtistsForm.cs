@@ -49,5 +49,10 @@ namespace WinFormsConcerts
         {
 
         }
+
+        private void buttonFind_Click(object sender, EventArgs e)
+        {
+            find_Artists();
+        }
     }
 }

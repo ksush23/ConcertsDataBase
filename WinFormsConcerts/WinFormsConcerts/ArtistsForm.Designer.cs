@@ -37,6 +37,7 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelArtistName = new System.Windows.Forms.Label();
             this.labelArtistGenre = new System.Windows.Forms.Label();
+            this.buttonFind = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dsConcerts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistCategory)).BeginInit();
@@ -100,11 +101,22 @@
             this.labelArtistGenre.TabIndex = 4;
             this.labelArtistGenre.Text = "Жанр";
             // 
+            // buttonFind
+            // 
+            this.buttonFind.Location = new System.Drawing.Point(541, 51);
+            this.buttonFind.Name = "buttonFind";
+            this.buttonFind.Size = new System.Drawing.Size(100, 45);
+            this.buttonFind.TabIndex = 5;
+            this.buttonFind.Text = "Пошук";
+            this.buttonFind.UseVisualStyleBackColor = true;
+            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
+            // 
             // ArtistsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonFind);
             this.Controls.Add(this.labelArtistGenre);
             this.Controls.Add(this.labelArtistName);
             this.Controls.Add(this.textBoxName);
@@ -131,5 +143,6 @@
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label labelArtistName;
         private System.Windows.Forms.Label labelArtistGenre;
+        private System.Windows.Forms.Button buttonFind;
     }
 }

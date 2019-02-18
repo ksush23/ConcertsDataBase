@@ -644,6 +644,7 @@
             this.dataGridViewArtist.Size = new System.Drawing.Size(768, 388);
             this.dataGridViewArtist.TabIndex = 3;
             this.dataGridViewArtist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewArtist_CellContentClick);
+            this.dataGridViewArtist.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewArtistCategory_CellDoubleClick);
             // 
             // artistNameDataGridViewTextBoxColumn
             // 

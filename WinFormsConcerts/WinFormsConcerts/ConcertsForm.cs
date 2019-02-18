@@ -283,5 +283,23 @@ namespace WinFormsConcerts
                 MessageBox.Show("Помилка переходу до списку виконавців", "Перехід до списку виконавців");
             }
         }
+
+        private void dataGridViewArtistCategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int id = (int)dataGridViewArtist.CurrentRow.Cells["Artist_ID"].Value;
+                string name = (string)dataGridViewArtist.CurrentRow.Cells["artistNameDataGridViewTextBoxColumn"].Value;
+
+                ArtistsForm concertsDialog = new ArtistsForm(id, name);
+                concertsDialog.ShowDialog(this);
+
+                concertsDialog.Dispose();
+            }
+            catch
+            {
+                MessageBox.Show("Помилка переходу до списку виконавців", "Перехід до списку виконавців");
+            }
+        }
     }
 }
