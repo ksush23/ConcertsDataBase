@@ -28,37 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewArtistsForm = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistsForm)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.artistsByCategoryTableAdapter = new ConcertsData.DSConcertsTableAdapters.ArtistsByCategoryTableAdapter();
+            this.dsConcerts = new ConcertsData.DSConcerts();
+            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewArtistCategory = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dsConcerts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistCategory)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewArtistsForm
+            // artistsByCategoryTableAdapter
             // 
-            this.dataGridViewArtistsForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewArtistsForm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewArtistsForm.Location = new System.Drawing.Point(1, 13);
-            this.dataGridViewArtistsForm.Name = "dataGridViewArtistsForm";
-            this.dataGridViewArtistsForm.RowTemplate.Height = 24;
-            this.dataGridViewArtistsForm.Size = new System.Drawing.Size(787, 425);
-            this.dataGridViewArtistsForm.TabIndex = 0;
+            this.artistsByCategoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // dsConcerts
+            // 
+            this.dsConcerts.DataSetName = "DSConcerts";
+            this.dsConcerts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingSource
+            // 
+            this.bindingSource.DataMember = "ArtistsByCategory";
+            // 
+            // dataGridViewArtistCategory
+            // 
+            this.dataGridViewArtistCategory.AutoGenerateColumns = false;
+            this.dataGridViewArtistCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewArtistCategory.DataSource = this.bindingSource;
+            this.dataGridViewArtistCategory.Location = new System.Drawing.Point(30, 148);
+            this.dataGridViewArtistCategory.Name = "dataGridViewArtistCategory";
+            this.dataGridViewArtistCategory.RowTemplate.Height = 24;
+            this.dataGridViewArtistCategory.Size = new System.Drawing.Size(720, 269);
+            this.dataGridViewArtistCategory.TabIndex = 0;
             // 
             // ArtistsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridViewArtistsForm);
+            this.Controls.Add(this.dataGridViewArtistCategory);
             this.Name = "ArtistsForm";
             this.Text = "ArtistsForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistsForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsConcerts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistCategory)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewArtistsForm;
+        private ConcertsData.DSConcertsTableAdapters.ArtistsByCategoryTableAdapter artistsByCategoryTableAdapter;
+        private ConcertsData.DSConcerts dsConcerts;
+        private System.Windows.Forms.BindingSource bindingSource;
+        private System.Windows.Forms.DataGridView dataGridViewArtistCategory;
     }
 }

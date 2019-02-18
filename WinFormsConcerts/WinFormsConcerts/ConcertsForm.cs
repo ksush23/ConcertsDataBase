@@ -12,6 +12,9 @@ namespace WinFormsConcerts
 {
     public partial class ConcertsForm : Form
     {
+        bool changed;
+        int id_cat;
+        string name_cat;
         public ConcertsForm()
         {
             InitializeComponent();
@@ -21,6 +24,19 @@ namespace WinFormsConcerts
             placesTableAdapter.Fill(concertsDataSet.Places);
             sectorsTableAdapter.Fill(concertsDataSet.Sectors);
             seatsTableAdapter.Fill(concertsDataSet.Seats);
+
+            changed = false;
+        }
+
+        public ConcertsForm(int cat_id, string cat_name)
+        {
+            InitializeComponent();
+            Text = String.Concat(Text, " ", cat_name);
+
+            id_cat = cat_id;
+            name_cat = cat_name;
+            find_Artists();
+            changed = false;
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -259,6 +275,35 @@ namespace WinFormsConcerts
         private void dataGridViewConcerts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridViewArtist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewArtist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (changed)
+            {
+                MessageBox.Show("Необхідно зберегти зміни!");
+            }
+
+            else
+                try
+                {
+                    int id = (int)dataGridViewArtist.CurrentRow.Cells["Artist_ID"].Value;
+                    string name = (string)dataGridViewArtist.CurrentRow.Cells["artistNameDataGridViewTextBoxColumn"].Value;
+
+                    ConcertsForm concertsDialog = new ConcertsForm(id, name);
+                    concertsDialog.ShowDialog(this);
+
+                    concertsDialog.Dispose();
+                }
+                catch
+                {
+                    MessageBox.Show("Помилка переходу до списку виконавців", "Перехід до списку виконавців");
+                }
         }
     }
 }
