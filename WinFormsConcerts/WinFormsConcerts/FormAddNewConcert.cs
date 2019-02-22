@@ -41,7 +41,7 @@ namespace WinFormsConcerts
             try
             {
                 int concert_id = (int)(bindingSource.Current as DataRowView)["Concert_ID"];
-                notConcertsTableAdapter.
+                notConcertsTableAdapter
             }
         }
     }
