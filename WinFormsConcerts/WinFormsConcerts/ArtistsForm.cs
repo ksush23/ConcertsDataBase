@@ -92,16 +92,7 @@ namespace WinFormsConcerts
 
         private void buttonAddConcert_Click(object sender, EventArgs e)
         {
-            int id = (int)dataGridViewArtistsCategory.CurrentRow.Cells["Artist_ID"].Value;
-            string time = (string)dataGridViewArtistsCategory.CurrentRow.Cells["concertTimeDateDataGridViewTextBoxColumn"].Value;
 
-            FormAddNewConcert addNewConcert = new FormAddNewConcert(id, time);
-
-            addNewConcert.ShowDialog(this);
-
-            addNewConcert.Dispose();
-
-            artistsByCategoryTableAdapter.Fill(dsConcerts.ArtistsByCategory, id);
         }
 
         private void dataGridViewArtistsCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)

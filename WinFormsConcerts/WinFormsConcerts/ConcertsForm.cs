@@ -301,5 +301,10 @@ namespace WinFormsConcerts
                 MessageBox.Show("Помилка переходу до списку виконавців", "Перехід до списку виконавців");
             }
         }
+
+        private void tabControlConcerts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
