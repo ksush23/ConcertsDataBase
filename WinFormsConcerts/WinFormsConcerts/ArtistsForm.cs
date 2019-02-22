@@ -42,6 +42,8 @@ namespace WinFormsConcerts
 
         private void ArtistsForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "concertsDataSet.Artists". При необходимости она может быть перемещена или удалена.
+            this.artistsTableAdapter.Fill(this.concertsDataSet.Artists);
 
         }
 
@@ -53,6 +55,21 @@ namespace WinFormsConcerts
         private void buttonFind_Click(object sender, EventArgs e)
         {
             find_Artists();
+        }
+
+        private void dataGridViewArtistCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = 0;
+
+            try
+            {
+                id = (int)dataGridViewArtistsCategory.CurrentRow.Cells["Artist_ID"].Value;
+                artistsByGenreTableAdapter.FillGenre(dsConcerts.ArtistsByGenre, id);
+            }
+            catch
+            {
+                MessageBox.Show("Помилка", "Помилка");
+            }
         }
     }
 }
