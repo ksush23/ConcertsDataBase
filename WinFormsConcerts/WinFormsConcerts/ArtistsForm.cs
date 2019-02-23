@@ -32,11 +32,19 @@ namespace WinFormsConcerts
         private void find_Artists()
         {
             string findName = "%" + textBoxName.Text + "%";
-            if (textBoxGenre.Text != "")
-            {
-                string findGenre = "%" + textBoxGenre.Text + "%";
+            string findGenre = "%" + comboBoxGenres.Text + "%";
 
-                artistsByCategoryTableAdapter.FillByArtistGenre(dsConcerts.ArtistsByCategory, id_cat, findGenre);
+            if (textBoxName.Text != "" && comboBoxGenres.Text != "")
+            {
+                artistsByCategoryTableAdapter.FillByNameGenre(dsConcerts.ArtistsByCategory, id_cat, findName, findGenre);
+            }
+
+            else
+            {
+                if (textBoxName.Text != "")
+                    artistsByCategoryTableAdapter.FillByName(dsConcerts.ArtistsByCategory, id_cat, findName);
+                else if (comboBoxGenres.Text != "")
+                        artistsByCategoryTableAdapter.FillByArtistGenre(dsConcerts.ArtistsByCategory, id_cat, findGenre);
             }
         }
 
