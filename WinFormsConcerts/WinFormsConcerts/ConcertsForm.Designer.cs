@@ -41,12 +41,22 @@
             this.deleteSeatsButton = new System.Windows.Forms.Button();
             this.saveSeatsButton = new System.Windows.Forms.Button();
             this.dataGridViewSeats = new System.Windows.Forms.DataGridView();
+            this.seatLinenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seat_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seat_Sector_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seatNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ComboBoxSeatSectorID = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.seatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageSectors = new System.Windows.Forms.TabPage();
             this.deleteSectorsButton = new System.Windows.Forms.Button();
             this.saveSectorsButton = new System.Windows.Forms.Button();
             this.dataGridViewSectors = new System.Windows.Forms.DataGridView();
-            this.sectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sectorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sector_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sector_Place_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ComboBoxSectorPlaceID = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.placesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPagePlaces = new System.Windows.Forms.TabPage();
             this.deletePlacesButton = new System.Windows.Forms.Button();
             this.savePlacesButton = new System.Windows.Forms.Button();
@@ -54,18 +64,25 @@
             this.placeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placeAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Place_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageTickets = new System.Windows.Forms.TabPage();
             this.deleteTicketsButton = new System.Windows.Forms.Button();
             this.saveTicketsButton = new System.Windows.Forms.Button();
             this.dataGridViewTickets = new System.Windows.Forms.DataGridView();
+            this.bindingSourceTicketStates = new System.Windows.Forms.BindingSource(this.components);
+            this.dsConcerts = new ConcertsData.DSConcerts();
+            this.concertsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageConcerts = new System.Windows.Forms.TabPage();
             this.deleteConcertsButton = new System.Windows.Forms.Button();
             this.saveConcertsButton = new System.Windows.Forms.Button();
             this.dataGridViewConcerts = new System.Windows.Forms.DataGridView();
+            this.concertTimeDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Concert_Artist_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Concert_Place_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Concert_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ComboBoxConcertArtistID = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.artistsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.concertsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ComboBoxConcertPlaceID = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabPageArtists = new System.Windows.Forms.TabPage();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.dataGridViewArtist = new System.Windows.Forms.DataGridView();
@@ -79,25 +96,8 @@
             this.fKConcertArtistBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fKConcertArtistBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ticket_StatesTableAdapter = new ConcertsData.DSConcertsTableAdapters.Ticket_StatesTableAdapter();
-            this.bindingSourceTicketStates = new System.Windows.Forms.BindingSource(this.components);
-            this.dsConcerts = new ConcertsData.DSConcerts();
-            this.sectorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sector_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sector_Place_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ComboBoxSectorPlaceID = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.seatLinenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seat_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seat_Sector_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seatNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ComboBoxSeatSectorID = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.concertTimeDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Concert_Artist_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Concert_Place_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Concert_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ComboBoxConcertArtistID = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ComboBoxConcertPlaceID = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Ticket_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ComboBoxTicketStateID = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Ticket_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ticket_Concert_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ticket_State_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ticket_Seat_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,27 +108,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.concertsDataSet)).BeginInit();
             this.tabPageSeats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeats)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sectorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seatsBindingSource)).BeginInit();
             this.tabPageSectors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSectors)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sectorsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.placesBindingSource)).BeginInit();
             this.tabPagePlaces.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlaces)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.placesBindingSource)).BeginInit();
             this.tabPageTickets.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTickets)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketStates)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsConcerts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.concertsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
             this.tabPageConcerts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConcerts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artistsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.concertsBindingSource)).BeginInit();
             this.tabPageArtists.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtist)).BeginInit();
             this.tabControlConcerts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fKConcertArtistBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKConcertArtistBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketStates)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsConcerts)).BeginInit();
             this.SuspendLayout();
             // 
             // concertsDataSetBindingSource
@@ -218,6 +218,44 @@
             this.dataGridViewSeats.Size = new System.Drawing.Size(769, 393);
             this.dataGridViewSeats.TabIndex = 0;
             // 
+            // seatLinenumberDataGridViewTextBoxColumn
+            // 
+            this.seatLinenumberDataGridViewTextBoxColumn.DataPropertyName = "Seat_Line_number";
+            this.seatLinenumberDataGridViewTextBoxColumn.HeaderText = "Номер ряду";
+            this.seatLinenumberDataGridViewTextBoxColumn.Name = "seatLinenumberDataGridViewTextBoxColumn";
+            // 
+            // Seat_ID
+            // 
+            this.Seat_ID.DataPropertyName = "Seat_ID";
+            this.Seat_ID.HeaderText = "Seat_ID";
+            this.Seat_ID.Name = "Seat_ID";
+            this.Seat_ID.Visible = false;
+            // 
+            // Seat_Sector_ID
+            // 
+            this.Seat_Sector_ID.DataPropertyName = "Seat_Sector_ID";
+            this.Seat_Sector_ID.HeaderText = "Seat_Sector_ID";
+            this.Seat_Sector_ID.Name = "Seat_Sector_ID";
+            this.Seat_Sector_ID.Visible = false;
+            // 
+            // seatNumberDataGridViewTextBoxColumn
+            // 
+            this.seatNumberDataGridViewTextBoxColumn.DataPropertyName = "Seat_Number";
+            this.seatNumberDataGridViewTextBoxColumn.HeaderText = "Номер сидіння";
+            this.seatNumberDataGridViewTextBoxColumn.Name = "seatNumberDataGridViewTextBoxColumn";
+            // 
+            // ComboBoxSeatSectorID
+            // 
+            this.ComboBoxSeatSectorID.DataSource = this.sectorsBindingSource;
+            this.ComboBoxSeatSectorID.DisplayMember = "Sector_Name";
+            this.ComboBoxSeatSectorID.HeaderText = "Сектор";
+            this.ComboBoxSeatSectorID.Name = "ComboBoxSeatSectorID";
+            // 
+            // sectorsBindingSource
+            // 
+            this.sectorsBindingSource.DataMember = "Sectors";
+            this.sectorsBindingSource.DataSource = this.concertsDataSet;
+            // 
             // seatsBindingSource
             // 
             this.seatsBindingSource.DataMember = "Seats";
@@ -274,10 +312,37 @@
             this.dataGridViewSectors.Size = new System.Drawing.Size(768, 386);
             this.dataGridViewSectors.TabIndex = 0;
             // 
-            // sectorsBindingSource
+            // sectorNameDataGridViewTextBoxColumn
             // 
-            this.sectorsBindingSource.DataMember = "Sectors";
-            this.sectorsBindingSource.DataSource = this.concertsDataSet;
+            this.sectorNameDataGridViewTextBoxColumn.DataPropertyName = "Sector_Name";
+            this.sectorNameDataGridViewTextBoxColumn.HeaderText = "Назва";
+            this.sectorNameDataGridViewTextBoxColumn.Name = "sectorNameDataGridViewTextBoxColumn";
+            // 
+            // Sector_ID
+            // 
+            this.Sector_ID.DataPropertyName = "Sector_ID";
+            this.Sector_ID.HeaderText = "Sector_ID";
+            this.Sector_ID.Name = "Sector_ID";
+            this.Sector_ID.Visible = false;
+            // 
+            // Sector_Place_ID
+            // 
+            this.Sector_Place_ID.DataPropertyName = "Sector_Place_ID";
+            this.Sector_Place_ID.HeaderText = "Sector_Place_ID";
+            this.Sector_Place_ID.Name = "Sector_Place_ID";
+            this.Sector_Place_ID.Visible = false;
+            // 
+            // ComboBoxSectorPlaceID
+            // 
+            this.ComboBoxSectorPlaceID.DataSource = this.placesBindingSource;
+            this.ComboBoxSectorPlaceID.DisplayMember = "Place_Name";
+            this.ComboBoxSectorPlaceID.HeaderText = "Місце проведення";
+            this.ComboBoxSectorPlaceID.Name = "ComboBoxSectorPlaceID";
+            // 
+            // placesBindingSource
+            // 
+            this.placesBindingSource.DataMember = "Places";
+            this.placesBindingSource.DataSource = this.concertsDataSet;
             // 
             // tabPagePlaces
             // 
@@ -348,11 +413,6 @@
             this.Place_ID.Name = "Place_ID";
             this.Place_ID.Visible = false;
             // 
-            // placesBindingSource
-            // 
-            this.placesBindingSource.DataMember = "Places";
-            this.placesBindingSource.DataSource = this.concertsDataSet;
-            // 
             // tabPageTickets
             // 
             this.tabPageTickets.Controls.Add(this.deleteTicketsButton);
@@ -393,8 +453,8 @@
             this.dataGridViewTickets.AutoGenerateColumns = false;
             this.dataGridViewTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Ticket_ID,
             this.ComboBoxTicketStateID,
+            this.Ticket_ID,
             this.Ticket_Concert_ID,
             this.Ticket_State_ID,
             this.Ticket_Seat_ID,
@@ -407,6 +467,21 @@
             this.dataGridViewTickets.RowTemplate.Height = 24;
             this.dataGridViewTickets.Size = new System.Drawing.Size(777, 378);
             this.dataGridViewTickets.TabIndex = 0;
+            // 
+            // bindingSourceTicketStates
+            // 
+            this.bindingSourceTicketStates.DataMember = "Ticket_States";
+            this.bindingSourceTicketStates.DataSource = this.dsConcerts;
+            // 
+            // dsConcerts
+            // 
+            this.dsConcerts.DataSetName = "DSConcerts";
+            this.dsConcerts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // concertsBindingSource
+            // 
+            this.concertsBindingSource.DataMember = "Concerts";
+            this.concertsBindingSource.DataSource = this.concertsDataSet;
             // 
             // ticketsBindingSource
             // 
@@ -468,15 +543,51 @@
             this.dataGridViewConcerts.TabIndex = 0;
             this.dataGridViewConcerts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewConcerts_CellContentClick);
             // 
+            // concertTimeDateDataGridViewTextBoxColumn
+            // 
+            this.concertTimeDateDataGridViewTextBoxColumn.DataPropertyName = "Concert_TimeDate";
+            this.concertTimeDateDataGridViewTextBoxColumn.HeaderText = "Дата і час";
+            this.concertTimeDateDataGridViewTextBoxColumn.Name = "concertTimeDateDataGridViewTextBoxColumn";
+            // 
+            // Concert_Artist_ID
+            // 
+            this.Concert_Artist_ID.DataPropertyName = "Concert_Artist_ID";
+            this.Concert_Artist_ID.HeaderText = "Concert_Artist_ID";
+            this.Concert_Artist_ID.Name = "Concert_Artist_ID";
+            this.Concert_Artist_ID.Visible = false;
+            // 
+            // Concert_Place_ID
+            // 
+            this.Concert_Place_ID.DataPropertyName = "Concert_Place_ID";
+            this.Concert_Place_ID.HeaderText = "Concert_Place_ID";
+            this.Concert_Place_ID.Name = "Concert_Place_ID";
+            this.Concert_Place_ID.Visible = false;
+            // 
+            // Concert_ID
+            // 
+            this.Concert_ID.DataPropertyName = "Concert_ID";
+            this.Concert_ID.HeaderText = "Concert_ID";
+            this.Concert_ID.Name = "Concert_ID";
+            this.Concert_ID.Visible = false;
+            // 
+            // ComboBoxConcertArtistID
+            // 
+            this.ComboBoxConcertArtistID.DataSource = this.artistsBindingSource;
+            this.ComboBoxConcertArtistID.DisplayMember = "Artist_Name";
+            this.ComboBoxConcertArtistID.HeaderText = "Виконавець";
+            this.ComboBoxConcertArtistID.Name = "ComboBoxConcertArtistID";
+            // 
             // artistsBindingSource
             // 
             this.artistsBindingSource.DataMember = "Artists";
             this.artistsBindingSource.DataSource = this.concertsDataSet;
             // 
-            // concertsBindingSource
+            // ComboBoxConcertPlaceID
             // 
-            this.concertsBindingSource.DataMember = "Concerts";
-            this.concertsBindingSource.DataSource = this.concertsDataSet;
+            this.ComboBoxConcertPlaceID.DataSource = this.placesBindingSource;
+            this.ComboBoxConcertPlaceID.DisplayMember = "Place_Name";
+            this.ComboBoxConcertPlaceID.HeaderText = "Місце проведення";
+            this.ComboBoxConcertPlaceID.Name = "ComboBoxConcertPlaceID";
             // 
             // tabPageArtists
             // 
@@ -593,116 +704,12 @@
             // 
             this.ticket_StatesTableAdapter.ClearBeforeFill = true;
             // 
-            // bindingSourceTicketStates
+            // ComboBoxTicketStateID
             // 
-            this.bindingSourceTicketStates.DataMember = "Ticket_States";
-            this.bindingSourceTicketStates.DataSource = this.dsConcerts;
-            // 
-            // dsConcerts
-            // 
-            this.dsConcerts.DataSetName = "DSConcerts";
-            this.dsConcerts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sectorNameDataGridViewTextBoxColumn
-            // 
-            this.sectorNameDataGridViewTextBoxColumn.DataPropertyName = "Sector_Name";
-            this.sectorNameDataGridViewTextBoxColumn.HeaderText = "Назва";
-            this.sectorNameDataGridViewTextBoxColumn.Name = "sectorNameDataGridViewTextBoxColumn";
-            // 
-            // Sector_ID
-            // 
-            this.Sector_ID.DataPropertyName = "Sector_ID";
-            this.Sector_ID.HeaderText = "Sector_ID";
-            this.Sector_ID.Name = "Sector_ID";
-            this.Sector_ID.Visible = false;
-            // 
-            // Sector_Place_ID
-            // 
-            this.Sector_Place_ID.DataPropertyName = "Sector_Place_ID";
-            this.Sector_Place_ID.HeaderText = "Sector_Place_ID";
-            this.Sector_Place_ID.Name = "Sector_Place_ID";
-            this.Sector_Place_ID.Visible = false;
-            // 
-            // ComboBoxSectorPlaceID
-            // 
-            this.ComboBoxSectorPlaceID.DataSource = this.placesBindingSource;
-            this.ComboBoxSectorPlaceID.DisplayMember = "Place_Name";
-            this.ComboBoxSectorPlaceID.HeaderText = "Місце проведення";
-            this.ComboBoxSectorPlaceID.Name = "ComboBoxSectorPlaceID";
-            // 
-            // seatLinenumberDataGridViewTextBoxColumn
-            // 
-            this.seatLinenumberDataGridViewTextBoxColumn.DataPropertyName = "Seat_Line_number";
-            this.seatLinenumberDataGridViewTextBoxColumn.HeaderText = "Номер ряду";
-            this.seatLinenumberDataGridViewTextBoxColumn.Name = "seatLinenumberDataGridViewTextBoxColumn";
-            // 
-            // Seat_ID
-            // 
-            this.Seat_ID.DataPropertyName = "Seat_ID";
-            this.Seat_ID.HeaderText = "Seat_ID";
-            this.Seat_ID.Name = "Seat_ID";
-            this.Seat_ID.Visible = false;
-            // 
-            // Seat_Sector_ID
-            // 
-            this.Seat_Sector_ID.DataPropertyName = "Seat_Sector_ID";
-            this.Seat_Sector_ID.HeaderText = "Seat_Sector_ID";
-            this.Seat_Sector_ID.Name = "Seat_Sector_ID";
-            this.Seat_Sector_ID.Visible = false;
-            // 
-            // seatNumberDataGridViewTextBoxColumn
-            // 
-            this.seatNumberDataGridViewTextBoxColumn.DataPropertyName = "Seat_Number";
-            this.seatNumberDataGridViewTextBoxColumn.HeaderText = "Номер сидіння";
-            this.seatNumberDataGridViewTextBoxColumn.Name = "seatNumberDataGridViewTextBoxColumn";
-            // 
-            // ComboBoxSeatSectorID
-            // 
-            this.ComboBoxSeatSectorID.DataSource = this.sectorsBindingSource;
-            this.ComboBoxSeatSectorID.DisplayMember = "Sector_Name";
-            this.ComboBoxSeatSectorID.HeaderText = "Сектор";
-            this.ComboBoxSeatSectorID.Name = "ComboBoxSeatSectorID";
-            // 
-            // concertTimeDateDataGridViewTextBoxColumn
-            // 
-            this.concertTimeDateDataGridViewTextBoxColumn.DataPropertyName = "Concert_TimeDate";
-            this.concertTimeDateDataGridViewTextBoxColumn.HeaderText = "Дата і час";
-            this.concertTimeDateDataGridViewTextBoxColumn.Name = "concertTimeDateDataGridViewTextBoxColumn";
-            // 
-            // Concert_Artist_ID
-            // 
-            this.Concert_Artist_ID.DataPropertyName = "Concert_Artist_ID";
-            this.Concert_Artist_ID.HeaderText = "Concert_Artist_ID";
-            this.Concert_Artist_ID.Name = "Concert_Artist_ID";
-            this.Concert_Artist_ID.Visible = false;
-            // 
-            // Concert_Place_ID
-            // 
-            this.Concert_Place_ID.DataPropertyName = "Concert_Place_ID";
-            this.Concert_Place_ID.HeaderText = "Concert_Place_ID";
-            this.Concert_Place_ID.Name = "Concert_Place_ID";
-            this.Concert_Place_ID.Visible = false;
-            // 
-            // Concert_ID
-            // 
-            this.Concert_ID.DataPropertyName = "Concert_ID";
-            this.Concert_ID.HeaderText = "Concert_ID";
-            this.Concert_ID.Name = "Concert_ID";
-            this.Concert_ID.Visible = false;
-            // 
-            // ComboBoxConcertArtistID
-            // 
-            this.ComboBoxConcertArtistID.DataSource = this.artistsBindingSource;
-            this.ComboBoxConcertArtistID.DisplayMember = "Artist_Name";
-            this.ComboBoxConcertArtistID.HeaderText = "Виконавець";
-            this.ComboBoxConcertArtistID.Name = "ComboBoxConcertArtistID";
-            // 
-            // ComboBoxConcertPlaceID
-            // 
-            this.ComboBoxConcertPlaceID.DataSource = this.placesBindingSource;
-            this.ComboBoxConcertPlaceID.DisplayMember = "Place_Name";
-            this.ComboBoxConcertPlaceID.HeaderText = "Місце проведення";
-            this.ComboBoxConcertPlaceID.Name = "ComboBoxConcertPlaceID";
+            this.ComboBoxTicketStateID.DataSource = this.bindingSourceTicketStates;
+            this.ComboBoxTicketStateID.DisplayMember = "Name";
+            this.ComboBoxTicketStateID.HeaderText = "Стан квитка";
+            this.ComboBoxTicketStateID.Name = "ComboBoxTicketStateID";
             // 
             // Ticket_ID
             // 
@@ -710,13 +717,6 @@
             this.Ticket_ID.HeaderText = "Ticket_ID";
             this.Ticket_ID.Name = "Ticket_ID";
             this.Ticket_ID.Visible = false;
-            // 
-            // ComboBoxTicketStateID
-            // 
-            this.ComboBoxTicketStateID.DataSource = this.bindingSourceTicketStates;
-            this.ComboBoxTicketStateID.DisplayMember = "Name";
-            this.ComboBoxTicketStateID.HeaderText = "Стан квитка";
-            this.ComboBoxTicketStateID.Name = "ComboBoxTicketStateID";
             // 
             // Ticket_Concert_ID
             // 
@@ -775,27 +775,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.concertsDataSet)).EndInit();
             this.tabPageSeats.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeats)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sectorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seatsBindingSource)).EndInit();
             this.tabPageSectors.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSectors)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sectorsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.placesBindingSource)).EndInit();
             this.tabPagePlaces.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlaces)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.placesBindingSource)).EndInit();
             this.tabPageTickets.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTickets)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketStates)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsConcerts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.concertsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
             this.tabPageConcerts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConcerts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artistsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.concertsBindingSource)).EndInit();
             this.tabPageArtists.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtist)).EndInit();
             this.tabControlConcerts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fKConcertArtistBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKConcertArtistBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketStates)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsConcerts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -859,16 +859,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sector_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sector_Place_ID;
         private System.Windows.Forms.DataGridViewComboBoxColumn ComboBoxSectorPlaceID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ticket_ID;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ComboBoxTicketStateID;
         private System.Windows.Forms.BindingSource bindingSourceTicketStates;
         private ConcertsData.DSConcerts dsConcerts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ticket_Concert_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ticket_State_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ticket_Seat_ID;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ComboBoxTicketConcertID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ticketPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ComboBoxTicketSeatID;
         private System.Windows.Forms.DataGridViewTextBoxColumn concertTimeDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Concert_Artist_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Concert_Place_ID;
@@ -876,6 +868,14 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn ComboBoxConcertArtistID;
         private System.Windows.Forms.DataGridViewComboBoxColumn ComboBoxConcertPlaceID;
         private ConcertsData.DSConcertsTableAdapters.Ticket_StatesTableAdapter ticket_StatesTableAdapter;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ComboBoxTicketStateID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ticket_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ticket_Concert_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ticket_State_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ticket_Seat_ID;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ComboBoxTicketConcertID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ticketPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ComboBoxTicketSeatID;
     }
 }
 

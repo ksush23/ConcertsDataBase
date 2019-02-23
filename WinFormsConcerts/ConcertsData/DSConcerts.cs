@@ -21,3 +21,10 @@
         }
     }
 }
+
+namespace ConcertsData.DSConcertsTableAdapters {
+    
+    
+    public partial class ArtistsByCategoryTableAdapter {
+    }
+}

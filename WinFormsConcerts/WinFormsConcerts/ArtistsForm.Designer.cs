@@ -29,76 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.artistsByCategoryTableAdapter = new ConcertsData.DSConcertsTableAdapters.ArtistsByCategoryTableAdapter();
-            this.dsConcerts = new ConcertsData.DSConcerts();
-            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.labelArtistName = new System.Windows.Forms.Label();
-            this.labelArtistGenre = new System.Windows.Forms.Label();
             this.buttonFind = new System.Windows.Forms.Button();
             this.dataGridViewArtistsCategory = new System.Windows.Forms.DataGridView();
+            this.concertsDataSet = new WinFormsConcerts.ConcertsDataSet();
+            this.artistsTableAdapter = new WinFormsConcerts.ConcertsDataSetTableAdapters.ArtistsTableAdapter();
+            this.labelPlace = new System.Windows.Forms.Label();
+            this.textBoxPlace = new System.Windows.Forms.TextBox();
+            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsConcerts = new ConcertsData.DSConcerts();
+            this.artistsByCategoryTableAdapter = new ConcertsData.DSConcertsTableAdapters.ArtistsByCategoryTableAdapter();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.artistNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artistGenreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Place_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.concertTimeDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Artist_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Concert_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Concert_Artist_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Concert_Place_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistsByGenreTableAdapter = new ConcertsData.DSConcertsTableAdapters.ArtistsByGenreTableAdapter();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.concertsDataSet = new WinFormsConcerts.ConcertsDataSet();
-            this.artistsTableAdapter = new WinFormsConcerts.ConcertsDataSetTableAdapters.ArtistsTableAdapter();
-            this.comboBoxGenres = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dsConcerts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistsCategory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.concertsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsConcerts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // artistsByCategoryTableAdapter
-            // 
-            this.artistsByCategoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // dsConcerts
-            // 
-            this.dsConcerts.DataSetName = "DSConcerts";
-            this.dsConcerts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingSource
-            // 
-            this.bindingSource.DataMember = "ArtistsByCategory";
-            this.bindingSource.DataSource = this.dsConcerts;
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Location = new System.Drawing.Point(252, 42);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(180, 22);
-            this.textBoxName.TabIndex = 2;
-            // 
-            // labelArtistName
-            // 
-            this.labelArtistName.AutoSize = true;
-            this.labelArtistName.Location = new System.Drawing.Point(73, 42);
-            this.labelArtistName.Name = "labelArtistName";
-            this.labelArtistName.Size = new System.Drawing.Size(48, 17);
-            this.labelArtistName.TabIndex = 3;
-            this.labelArtistName.Text = "Назва";
-            this.labelArtistName.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // labelArtistGenre
-            // 
-            this.labelArtistGenre.AutoSize = true;
-            this.labelArtistGenre.Location = new System.Drawing.Point(73, 79);
-            this.labelArtistGenre.Name = "labelArtistGenre";
-            this.labelArtistGenre.Size = new System.Drawing.Size(45, 17);
-            this.labelArtistGenre.TabIndex = 4;
-            this.labelArtistGenre.Text = "Жанр";
             // 
             // buttonFind
             // 
-            this.buttonFind.Location = new System.Drawing.Point(542, 68);
+            this.buttonFind.Location = new System.Drawing.Point(534, 51);
             this.buttonFind.Name = "buttonFind";
             this.buttonFind.Size = new System.Drawing.Size(100, 45);
             this.buttonFind.TabIndex = 5;
@@ -116,20 +74,65 @@
             this.dataGridViewArtistsCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.artistNameDataGridViewTextBoxColumn,
             this.artistGenreDataGridViewTextBoxColumn,
+            this.Place_Name,
             this.concertTimeDateDataGridViewTextBoxColumn,
             this.Artist_ID,
             this.Concert_ID,
             this.Concert_Artist_ID,
             this.Concert_Place_ID});
             this.dataGridViewArtistsCategory.DataSource = this.bindingSource;
-            this.dataGridViewArtistsCategory.Location = new System.Drawing.Point(33, 132);
+            this.dataGridViewArtistsCategory.Location = new System.Drawing.Point(33, 120);
             this.dataGridViewArtistsCategory.Name = "dataGridViewArtistsCategory";
             this.dataGridViewArtistsCategory.RowTemplate.Height = 24;
-            this.dataGridViewArtistsCategory.Size = new System.Drawing.Size(642, 284);
+            this.dataGridViewArtistsCategory.Size = new System.Drawing.Size(601, 309);
             this.dataGridViewArtistsCategory.TabIndex = 6;
             this.dataGridViewArtistsCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewArtistsCategory_CellContentClick);
             this.dataGridViewArtistsCategory.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewArtistCategory_CellContentClick);
             this.dataGridViewArtistsCategory.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridViewArtistsCategory_DefaultValuesNeeded);
+            // 
+            // concertsDataSet
+            // 
+            this.concertsDataSet.DataSetName = "ConcertsDataSet";
+            this.concertsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // artistsTableAdapter
+            // 
+            this.artistsTableAdapter.ClearBeforeFill = true;
+            // 
+            // labelPlace
+            // 
+            this.labelPlace.AutoSize = true;
+            this.labelPlace.Location = new System.Drawing.Point(45, 65);
+            this.labelPlace.Name = "labelPlace";
+            this.labelPlace.Size = new System.Drawing.Size(128, 17);
+            this.labelPlace.TabIndex = 7;
+            this.labelPlace.Text = "Місце проведення";
+            // 
+            // textBoxPlace
+            // 
+            this.textBoxPlace.Location = new System.Drawing.Point(227, 60);
+            this.textBoxPlace.Name = "textBoxPlace";
+            this.textBoxPlace.Size = new System.Drawing.Size(154, 22);
+            this.textBoxPlace.TabIndex = 8;
+            // 
+            // bindingSource
+            // 
+            this.bindingSource.DataMember = "ArtistsByCategory";
+            this.bindingSource.DataSource = this.dsConcerts;
+            // 
+            // dsConcerts
+            // 
+            this.dsConcerts.DataSetName = "DSConcerts";
+            this.dsConcerts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // artistsByCategoryTableAdapter
+            // 
+            this.artistsByCategoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "Artists";
+            this.bindingSource1.DataSource = this.dsConcerts;
             // 
             // artistNameDataGridViewTextBoxColumn
             // 
@@ -144,6 +147,12 @@
             this.artistGenreDataGridViewTextBoxColumn.HeaderText = "Жанр";
             this.artistGenreDataGridViewTextBoxColumn.Name = "artistGenreDataGridViewTextBoxColumn";
             this.artistGenreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Place_Name
+            // 
+            this.Place_Name.DataPropertyName = "Place_Name";
+            this.Place_Name.HeaderText = "Місце проведення";
+            this.Place_Name.Name = "Place_Name";
             // 
             // concertTimeDateDataGridViewTextBoxColumn
             // 
@@ -179,60 +188,27 @@
             // Concert_Place_ID
             // 
             this.Concert_Place_ID.DataPropertyName = "Concert_Place_ID";
-            this.Concert_Place_ID.HeaderText = "Місце проведення";
+            this.Concert_Place_ID.HeaderText = "Concert_Place_ID";
             this.Concert_Place_ID.Name = "Concert_Place_ID";
-            this.Concert_Place_ID.ReadOnly = true;
-            // 
-            // artistsByGenreTableAdapter
-            // 
-            this.artistsByGenreTableAdapter.ClearBeforeFill = true;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "Artists";
-            this.bindingSource1.DataSource = this.dsConcerts;
-            // 
-            // concertsDataSet
-            // 
-            this.concertsDataSet.DataSetName = "ConcertsDataSet";
-            this.concertsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // artistsTableAdapter
-            // 
-            this.artistsTableAdapter.ClearBeforeFill = true;
-            // 
-            // comboBoxGenres
-            // 
-            this.comboBoxGenres.FormattingEnabled = true;
-            this.comboBoxGenres.Items.AddRange(new object[] {
-            "Pop",
-            "Rock",
-            "Rap",
-            "Народна музика"});
-            this.comboBoxGenres.Location = new System.Drawing.Point(252, 79);
-            this.comboBoxGenres.Name = "comboBoxGenres";
-            this.comboBoxGenres.Size = new System.Drawing.Size(180, 24);
-            this.comboBoxGenres.TabIndex = 7;
+            this.Concert_Place_ID.Visible = false;
             // 
             // ArtistsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1448, 450);
-            this.Controls.Add(this.comboBoxGenres);
+            this.ClientSize = new System.Drawing.Size(825, 450);
+            this.Controls.Add(this.textBoxPlace);
+            this.Controls.Add(this.labelPlace);
             this.Controls.Add(this.dataGridViewArtistsCategory);
             this.Controls.Add(this.buttonFind);
-            this.Controls.Add(this.labelArtistGenre);
-            this.Controls.Add(this.labelArtistName);
-            this.Controls.Add(this.textBoxName);
             this.Name = "ArtistsForm";
             this.Text = "ArtistsForm";
             this.Load += new System.EventHandler(this.ArtistsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsConcerts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistsCategory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.concertsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsConcerts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,22 +219,20 @@
         private ConcertsData.DSConcertsTableAdapters.ArtistsByCategoryTableAdapter artistsByCategoryTableAdapter;
         private ConcertsData.DSConcerts dsConcerts;
         private System.Windows.Forms.BindingSource bindingSource;
-        private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.Label labelArtistName;
-        private System.Windows.Forms.Label labelArtistGenre;
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.DataGridView dataGridViewArtistsCategory;
-        private ConcertsData.DSConcertsTableAdapters.ArtistsByGenreTableAdapter artistsByGenreTableAdapter;
         private System.Windows.Forms.BindingSource bindingSource1;
         private ConcertsDataSet concertsDataSet;
         private ConcertsDataSetTableAdapters.ArtistsTableAdapter artistsTableAdapter;
+        private System.Windows.Forms.Label labelPlace;
+        private System.Windows.Forms.TextBox textBoxPlace;
         private System.Windows.Forms.DataGridViewTextBoxColumn artistNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn artistGenreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Place_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn concertTimeDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Artist_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Concert_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Concert_Artist_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Concert_Place_ID;
-        private System.Windows.Forms.ComboBox comboBoxGenres;
     }
 }

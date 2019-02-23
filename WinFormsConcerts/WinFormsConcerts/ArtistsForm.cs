@@ -31,20 +31,15 @@ namespace WinFormsConcerts
 
         private void find_Artists()
         {
-            string findName = "%" + textBoxName.Text + "%";
-            string findGenre = "%" + comboBoxGenres.Text + "%";
-
-            if (textBoxName.Text != "" && comboBoxGenres.Text != "")
+            string findPlace = "%" + textBoxPlace.Text + "%";
+            
+            if (textBoxPlace.Text != "")
             {
-                artistsByCategoryTableAdapter.FillByNameGenre(dsConcerts.ArtistsByCategory, id_cat, findName, findGenre);
+                artistsByCategoryTableAdapter.FillByPlace(dsConcerts.ArtistsByCategory, id_cat, findPlace);
             }
-
             else
             {
-                if (textBoxName.Text != "")
-                    artistsByCategoryTableAdapter.FillByName(dsConcerts.ArtistsByCategory, id_cat, findName);
-                else if (comboBoxGenres.Text != "")
-                        artistsByCategoryTableAdapter.FillByArtistGenre(dsConcerts.ArtistsByCategory, id_cat, findGenre);
+                artistsByCategoryTableAdapter.FillByData(dsConcerts.ArtistsByCategory, id_cat);
             }
         }
 
@@ -67,7 +62,7 @@ namespace WinFormsConcerts
 
         private void dataGridViewArtistCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id = 0;
+            /*int id = 0;
 
             try
             {
@@ -77,7 +72,7 @@ namespace WinFormsConcerts
             catch
             {
                 MessageBox.Show("Помилка", "Помилка");
-            }
+            }*/
         }
 
         private void dataGridViewArtistsCategory_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
