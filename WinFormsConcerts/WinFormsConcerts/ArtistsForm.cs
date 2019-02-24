@@ -32,7 +32,8 @@ namespace WinFormsConcerts
         private void find_Artists()
         {
             string findPlace = "%" + textBoxPlace.Text + "%";
-            
+
+
             if (textBoxPlace.Text != "")
             {
                 artistsByCategoryTableAdapter.FillByPlace(dsConcerts.ArtistsByCategory, id_cat, findPlace);

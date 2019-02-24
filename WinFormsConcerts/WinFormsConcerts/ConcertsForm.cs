@@ -286,7 +286,7 @@ namespace WinFormsConcerts
 
         private void dataGridViewArtistCategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            //try
             {
                 int id = (int)dataGridViewArtist.CurrentRow.Cells["Artist_ID"].Value;
                 string name = (string)dataGridViewArtist.CurrentRow.Cells["artistNameDataGridViewTextBoxColumn"].Value;
@@ -296,7 +296,7 @@ namespace WinFormsConcerts
 
                 concertsDialog.Dispose();
             }
-            catch
+            //catch
             {
                 MessageBox.Show("Помилка переходу до списку виконавців", "Перехід до списку виконавців");
             }
@@ -310,6 +310,32 @@ namespace WinFormsConcerts
         private void searchButton_Click(object sender, EventArgs e)
         {
          
+        }
+
+        private void buttonSearchForTickets_Click(object sender, EventArgs e)
+        {
+            FormTickets formTickets = new FormTickets();
+            formTickets.ShowDialog(this);
+            formTickets.Dispose();
+        }
+
+        private void buttonSearchForTickets_Click_1(object sender, EventArgs e)
+        {
+            FormTickets formTickets = new FormTickets();
+            formTickets.ShowDialog(this);
+            formTickets.Dispose();
+        }
+
+        private void buttonSearchForTickets_Click_2(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            FormTickets formTickets = new FormTickets();
+            formTickets.ShowDialog(this);
+            formTickets.Dispose();
         }
     }
 }

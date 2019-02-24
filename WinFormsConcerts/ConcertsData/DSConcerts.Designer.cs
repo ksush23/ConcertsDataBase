@@ -3064,19 +3064,13 @@ namespace ConcertsData {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class TicketsByCategoryDataTable : global::System.Data.TypedTableBase<TicketsByCategoryRow> {
             
-            private global::System.Data.DataColumn columnTicket_ID;
+            private global::System.Data.DataColumn columnName;
             
-            private global::System.Data.DataColumn columnTicket_State_ID;
+            private global::System.Data.DataColumn columnSeat_Line_number;
             
-            private global::System.Data.DataColumn columnTicket_Concert_ID;
-            
-            private global::System.Data.DataColumn columnTicket_Seat_ID;
-            
-            private global::System.Data.DataColumn columnTicket_Price;
+            private global::System.Data.DataColumn columnSeat_Number;
             
             private global::System.Data.DataColumn columnArtist_Name;
-            
-            private global::System.Data.DataColumn columnArtist_Genre;
             
             private global::System.Data.DataColumn columnPlace_Name;
             
@@ -3115,41 +3109,25 @@ namespace ConcertsData {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Ticket_IDColumn {
+            public global::System.Data.DataColumn NameColumn {
                 get {
-                    return this.columnTicket_ID;
+                    return this.columnName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Ticket_State_IDColumn {
+            public global::System.Data.DataColumn Seat_Line_numberColumn {
                 get {
-                    return this.columnTicket_State_ID;
+                    return this.columnSeat_Line_number;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Ticket_Concert_IDColumn {
+            public global::System.Data.DataColumn Seat_NumberColumn {
                 get {
-                    return this.columnTicket_Concert_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Ticket_Seat_IDColumn {
-                get {
-                    return this.columnTicket_Seat_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Ticket_PriceColumn {
-                get {
-                    return this.columnTicket_Price;
+                    return this.columnSeat_Number;
                 }
             }
             
@@ -3158,14 +3136,6 @@ namespace ConcertsData {
             public global::System.Data.DataColumn Artist_NameColumn {
                 get {
                     return this.columnArtist_Name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Artist_GenreColumn {
-                get {
-                    return this.columnArtist_Genre;
                 }
             }
             
@@ -3214,27 +3184,17 @@ namespace ConcertsData {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TicketsByCategoryRow AddTicketsByCategoryRow(int Ticket_ID, int Ticket_State_ID, int Ticket_Concert_ID, int Ticket_Seat_ID, int Ticket_Price, string Artist_Name, string Artist_Genre, string Place_Name) {
+            public TicketsByCategoryRow AddTicketsByCategoryRow(string Name, string Seat_Line_number, string Seat_Number, string Artist_Name, string Place_Name) {
                 TicketsByCategoryRow rowTicketsByCategoryRow = ((TicketsByCategoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Ticket_ID,
-                        Ticket_State_ID,
-                        Ticket_Concert_ID,
-                        Ticket_Seat_ID,
-                        Ticket_Price,
+                        Name,
+                        Seat_Line_number,
+                        Seat_Number,
                         Artist_Name,
-                        Artist_Genre,
                         Place_Name};
                 rowTicketsByCategoryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTicketsByCategoryRow);
                 return rowTicketsByCategoryRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TicketsByCategoryRow FindByTicket_ID(int Ticket_ID) {
-                return ((TicketsByCategoryRow)(this.Rows.Find(new object[] {
-                            Ticket_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3254,44 +3214,33 @@ namespace ConcertsData {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnTicket_ID = base.Columns["Ticket_ID"];
-                this.columnTicket_State_ID = base.Columns["Ticket_State_ID"];
-                this.columnTicket_Concert_ID = base.Columns["Ticket_Concert_ID"];
-                this.columnTicket_Seat_ID = base.Columns["Ticket_Seat_ID"];
-                this.columnTicket_Price = base.Columns["Ticket_Price"];
+                this.columnName = base.Columns["Name"];
+                this.columnSeat_Line_number = base.Columns["Seat_Line_number"];
+                this.columnSeat_Number = base.Columns["Seat_Number"];
                 this.columnArtist_Name = base.Columns["Artist_Name"];
-                this.columnArtist_Genre = base.Columns["Artist_Genre"];
                 this.columnPlace_Name = base.Columns["Place_Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnTicket_ID = new global::System.Data.DataColumn("Ticket_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTicket_ID);
-                this.columnTicket_State_ID = new global::System.Data.DataColumn("Ticket_State_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTicket_State_ID);
-                this.columnTicket_Concert_ID = new global::System.Data.DataColumn("Ticket_Concert_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTicket_Concert_ID);
-                this.columnTicket_Seat_ID = new global::System.Data.DataColumn("Ticket_Seat_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTicket_Seat_ID);
-                this.columnTicket_Price = new global::System.Data.DataColumn("Ticket_Price", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTicket_Price);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.columnSeat_Line_number = new global::System.Data.DataColumn("Seat_Line_number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSeat_Line_number);
+                this.columnSeat_Number = new global::System.Data.DataColumn("Seat_Number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSeat_Number);
                 this.columnArtist_Name = new global::System.Data.DataColumn("Artist_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnArtist_Name);
-                this.columnArtist_Genre = new global::System.Data.DataColumn("Artist_Genre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnArtist_Genre);
                 this.columnPlace_Name = new global::System.Data.DataColumn("Place_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPlace_Name);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnTicket_ID}, true));
-                this.columnTicket_ID.AllowDBNull = false;
-                this.columnTicket_ID.Unique = true;
-                this.columnTicket_State_ID.AllowDBNull = false;
+                this.columnName.MaxLength = 50;
+                this.columnSeat_Line_number.AllowDBNull = false;
+                this.columnSeat_Line_number.MaxLength = 50;
+                this.columnSeat_Number.AllowDBNull = false;
+                this.columnSeat_Number.MaxLength = 50;
                 this.columnArtist_Name.AllowDBNull = false;
                 this.columnArtist_Name.MaxLength = 50;
-                this.columnArtist_Genre.AllowDBNull = false;
-                this.columnArtist_Genre.MaxLength = 50;
                 this.columnPlace_Name.AllowDBNull = false;
                 this.columnPlace_Name.MaxLength = 50;
             }
@@ -4204,73 +4153,39 @@ namespace ConcertsData {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Ticket_ID {
-                get {
-                    return ((int)(this[this.tableTicketsByCategory.Ticket_IDColumn]));
-                }
-                set {
-                    this[this.tableTicketsByCategory.Ticket_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Ticket_State_ID {
-                get {
-                    return ((int)(this[this.tableTicketsByCategory.Ticket_State_IDColumn]));
-                }
-                set {
-                    this[this.tableTicketsByCategory.Ticket_State_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Ticket_Concert_ID {
+            public string Name {
                 get {
                     try {
-                        return ((int)(this[this.tableTicketsByCategory.Ticket_Concert_IDColumn]));
+                        return ((string)(this[this.tableTicketsByCategory.NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Ticket_Concert_ID\' в таблице \'TicketsByCategory\' равно DBNu" +
-                                "ll.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'TicketsByCategory\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTicketsByCategory.Ticket_Concert_IDColumn] = value;
+                    this[this.tableTicketsByCategory.NameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Ticket_Seat_ID {
+            public string Seat_Line_number {
                 get {
-                    try {
-                        return ((int)(this[this.tableTicketsByCategory.Ticket_Seat_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Ticket_Seat_ID\' в таблице \'TicketsByCategory\' равно DBNull." +
-                                "", e);
-                    }
+                    return ((string)(this[this.tableTicketsByCategory.Seat_Line_numberColumn]));
                 }
                 set {
-                    this[this.tableTicketsByCategory.Ticket_Seat_IDColumn] = value;
+                    this[this.tableTicketsByCategory.Seat_Line_numberColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Ticket_Price {
+            public string Seat_Number {
                 get {
-                    try {
-                        return ((int)(this[this.tableTicketsByCategory.Ticket_PriceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Ticket_Price\' в таблице \'TicketsByCategory\' равно DBNull.", e);
-                    }
+                    return ((string)(this[this.tableTicketsByCategory.Seat_NumberColumn]));
                 }
                 set {
-                    this[this.tableTicketsByCategory.Ticket_PriceColumn] = value;
+                    this[this.tableTicketsByCategory.Seat_NumberColumn] = value;
                 }
             }
             
@@ -4287,17 +4202,6 @@ namespace ConcertsData {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Artist_Genre {
-                get {
-                    return ((string)(this[this.tableTicketsByCategory.Artist_GenreColumn]));
-                }
-                set {
-                    this[this.tableTicketsByCategory.Artist_GenreColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Place_Name {
                 get {
                     return ((string)(this[this.tableTicketsByCategory.Place_NameColumn]));
@@ -4309,38 +4213,14 @@ namespace ConcertsData {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTicket_Concert_IDNull() {
-                return this.IsNull(this.tableTicketsByCategory.Ticket_Concert_IDColumn);
+            public bool IsNameNull() {
+                return this.IsNull(this.tableTicketsByCategory.NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTicket_Concert_IDNull() {
-                this[this.tableTicketsByCategory.Ticket_Concert_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTicket_Seat_IDNull() {
-                return this.IsNull(this.tableTicketsByCategory.Ticket_Seat_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTicket_Seat_IDNull() {
-                this[this.tableTicketsByCategory.Ticket_Seat_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTicket_PriceNull() {
-                return this.IsNull(this.tableTicketsByCategory.Ticket_PriceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTicket_PriceNull() {
-                this[this.tableTicketsByCategory.Ticket_PriceColumn] = global::System.Convert.DBNull;
+            public void SetNameNull() {
+                this[this.tableTicketsByCategory.NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7305,7 +7185,7 @@ SELECT Ticket_ID, Ticket_State_ID, Ticket_Concert_ID, Ticket_Seat_ID, Ticket_Pri
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Artists.*, Concerts.*\r\nFROM Artists INNER JOIN Concerts\r\non Artist_ID = Co" +
@@ -7356,6 +7236,21 @@ SELECT Ticket_ID, Ticket_State_ID, Ticket_Concert_ID, Ticket_Seat_ID, Ticket_Pri
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Concert_Artist_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Place_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = @"SELECT Tickets.*, Artists.Artist_Name, Artists.Artist_Genre, Places.Place_Name
+FROM Tickets INNER JOIN Concerts
+on Ticket_Concert_ID = Concert_ID,
+Concerts as C1 INNER JOIN Artists
+on C1.Concert_Artist_ID = Artist_ID, 
+Concerts as C2 INNER JOIN Places
+on C2.Concert_Place_ID = Place_ID
+WHERE (Artist_Name LIKE @artist_name AND Place_Name LIKE @place_name AND Ticket_Price <= @price_from AND Ticket_price >= @price_to)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@artist_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Artist_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@place_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Place_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_from", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Ticket_Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_to", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Ticket_Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7615,6 +7510,78 @@ SELECT Ticket_ID, Ticket_State_ID, Ticket_Concert_ID, Ticket_Seat_ID, Ticket_Pri
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByTry(DSConcerts.ArtistsByCategoryDataTable dataTable, string artist_name, string place_name, global::System.Nullable<int> price_from, global::System.Nullable<int> price_to) {
+            this.Adapter.SelectCommand = this.CommandCollection[7];
+            if ((artist_name == null)) {
+                throw new global::System.ArgumentNullException("artist_name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(artist_name));
+            }
+            if ((place_name == null)) {
+                throw new global::System.ArgumentNullException("place_name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(place_name));
+            }
+            if ((price_from.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(price_from.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((price_to.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(price_to.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DSConcerts.ArtistsByCategoryDataTable GetDataByTry(string artist_name, string place_name, global::System.Nullable<int> price_from, global::System.Nullable<int> price_to) {
+            this.Adapter.SelectCommand = this.CommandCollection[7];
+            if ((artist_name == null)) {
+                throw new global::System.ArgumentNullException("artist_name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(artist_name));
+            }
+            if ((place_name == null)) {
+                throw new global::System.ArgumentNullException("place_name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(place_name));
+            }
+            if ((price_from.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(price_from.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((price_to.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(price_to.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            DSConcerts.ArtistsByCategoryDataTable dataTable = new DSConcerts.ArtistsByCategoryDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DSConcerts.ArtistsByCategoryDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
@@ -7763,13 +7730,10 @@ SELECT Ticket_ID, Ticket_State_ID, Ticket_Concert_ID, Ticket_Seat_ID, Ticket_Pri
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "TicketsByCategory";
-            tableMapping.ColumnMappings.Add("Ticket_ID", "Ticket_ID");
-            tableMapping.ColumnMappings.Add("Ticket_State_ID", "Ticket_State_ID");
-            tableMapping.ColumnMappings.Add("Ticket_Concert_ID", "Ticket_Concert_ID");
-            tableMapping.ColumnMappings.Add("Ticket_Seat_ID", "Ticket_Seat_ID");
-            tableMapping.ColumnMappings.Add("Ticket_Price", "Ticket_Price");
+            tableMapping.ColumnMappings.Add("Name", "Name");
+            tableMapping.ColumnMappings.Add("Seat_Line_number", "Seat_Line_number");
+            tableMapping.ColumnMappings.Add("Seat_Number", "Seat_Number");
             tableMapping.ColumnMappings.Add("Artist_Name", "Artist_Name");
-            tableMapping.ColumnMappings.Add("Artist_Genre", "Artist_Genre");
             tableMapping.ColumnMappings.Add("Place_Name", "Place_Name");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -7784,100 +7748,74 @@ SELECT Ticket_ID, Ticket_State_ID, Ticket_Concert_ID, Ticket_Seat_ID, Ticket_Pri
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT Tickets.*, Artists.Artist_Name, Artists.Artist_Genre, Places.Place_Name
-FROM Tickets INNER JOIN Concerts
-on Ticket_Concert_ID = Concert_ID,
-Concerts as C1 INNER JOIN Artists
-on C1.Concert_Artist_ID = Artist_ID, 
-Concerts as C2 INNER JOIN Places
-on C2.Concert_Place_ID = Place_ID
-WHERE (Artist_Name LIKE @artist_name)";
+            this._commandCollection[0].CommandText = @"SELECT DISTINCT Ticket_States.Name, Seats.Seat_Line_number, Seats.Seat_Number, Artists.Artist_Name, Places.Place_Name
+FROM Ticket_States INNER JOIN Tickets
+on State_ID = Ticket_State_ID,
+Tickets as T1 INNER JOIN Seats
+on T1.Ticket_Seat_ID = Seat_ID,
+Tickets as T2 INNER JOIN Concerts as C1
+on T2.Ticket_Concert_ID = C1.Concert_ID,
+Concerts as C2 INNER JOIN Artists
+on C2.Concert_Artist_ID = Artist_ID,
+Concerts as C3 INNER JOIN Places
+on C3.Concert_Place_ID = Place_ID
+
+WHERE(Artist_Name LIKE @artist_name)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@artist_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Artist_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT Tickets.*, Artists.Artist_Name, Artists.Artist_Genre, Places.Place_Name
-FROM Tickets INNER JOIN Concerts
-on Ticket_Concert_ID = Concert_ID,
-Concerts as C1 INNER JOIN Artists
-on C1.Concert_Artist_ID = Artist_ID, 
-Concerts as C2 INNER JOIN Places
-on C2.Concert_Place_ID = Place_ID
-WHERE (Artist_Name LIKE @artist_name AND Place_Name LIKE @place_name)";
+            this._commandCollection[1].CommandText = @"SELECT DISTINCT Ticket_States.Name, Seats.Seat_Line_number, Seats.Seat_Number, Artists.Artist_Name, Places.Place_Name
+FROM Ticket_States INNER JOIN Tickets
+on State_ID = Ticket_State_ID,
+Tickets as T1 INNER JOIN Seats
+on T1.Ticket_Seat_ID = Seat_ID,
+Tickets as T2 INNER JOIN Concerts as C1
+on T2.Ticket_Concert_ID = C1.Concert_ID,
+Concerts as C2 INNER JOIN Artists
+on C2.Concert_Artist_ID = Artist_ID,
+Concerts as C3 INNER JOIN Places
+on C3.Concert_Place_ID = Place_ID
+";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@artist_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Artist_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@place_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Place_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT Tickets.*, Artists.Artist_Name, Artists.Artist_Genre, Places.Place_Name
-FROM Tickets INNER JOIN Concerts
-on Ticket_Concert_ID = Concert_ID,
-Concerts as C1 INNER JOIN Artists
-on C1.Concert_Artist_ID = Artist_ID, 
-Concerts as C2 INNER JOIN Places
-on C2.Concert_Place_ID = Place_ID
-WHERE (Artist_Name LIKE @artist_name AND Place_Name LIKE @place_name AND Ticket_Price <= @price_from AND Ticket_price >= @price_to)";
+            this._commandCollection[2].CommandText = @"SELECT DISTINCT Ticket_States.Name, Seats.Seat_Line_number, Seats.Seat_Number, Artists.Artist_Name, Places.Place_Name
+FROM Ticket_States INNER JOIN Tickets
+on State_ID = Ticket_State_ID,
+Tickets as T1 INNER JOIN Seats
+on T1.Ticket_Seat_ID = Seat_ID,
+Tickets as T2 INNER JOIN Concerts as C1
+on T2.Ticket_Concert_ID = C1.Concert_ID,
+Concerts as C2 INNER JOIN Artists
+on C2.Concert_Artist_ID = Artist_ID,
+Concerts as C3 INNER JOIN Places
+on C3.Concert_Place_ID = Place_ID
+
+WHERE(Artist_Name LIKE @artist_name AND Place_Name LIKE @place_name)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@artist_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Artist_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@place_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Place_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_from", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Ticket_Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_to", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Ticket_Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT Tickets.*, Artists.Artist_Name, Artists.Artist_Genre, Places.Place_Name
-FROM Tickets INNER JOIN Concerts
-on Ticket_Concert_ID = Concert_ID,
-Concerts as C1 INNER JOIN Artists
-on C1.Concert_Artist_ID = Artist_ID, 
-Concerts as C2 INNER JOIN Places
-on C2.Concert_Place_ID = Place_ID
-WHERE (Artist_Name LIKE @artist_name AND Ticket_Price <= @price_from AND Ticket_Price >= @price_to)";
+            this._commandCollection[3].CommandText = @"SELECT DISTINCT Ticket_States.Name, Seats.Seat_Line_number, Seats.Seat_Number, Artists.Artist_Name, Places.Place_Name
+FROM Ticket_States INNER JOIN Tickets
+on State_ID = Ticket_State_ID,
+Tickets as T1 INNER JOIN Seats
+on T1.Ticket_Seat_ID = Seat_ID,
+Tickets as T2 INNER JOIN Concerts as C1
+on T2.Ticket_Concert_ID = C1.Concert_ID,
+Concerts as C2 INNER JOIN Artists
+on C2.Concert_Artist_ID = Artist_ID,
+Concerts as C3 INNER JOIN Places
+on C3.Concert_Place_ID = Place_ID
+
+WHERE(Place_Name LIKE @place_name)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@artist_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Artist_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_from", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Ticket_Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_to", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Ticket_Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT Tickets.*, Artists.Artist_Name, Artists.Artist_Genre, Places.Place_Name
-FROM Tickets INNER JOIN Concerts
-on Ticket_Concert_ID = Concert_ID,
-Concerts as C1 INNER JOIN Artists
-on C1.Concert_Artist_ID = Artist_ID, 
-Concerts as C2 INNER JOIN Places
-on C2.Concert_Place_ID = Place_ID
-WHERE (Place_Name LIKE @place_name)";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@place_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Place_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT Tickets.*, Artists.Artist_Name, Artists.Artist_Genre, Places.Place_Name
-FROM Tickets INNER JOIN Concerts
-on Ticket_Concert_ID = Concert_ID,
-Concerts as C1 INNER JOIN Artists
-on C1.Concert_Artist_ID = Artist_ID, 
-Concerts as C2 INNER JOIN Places
-on C2.Concert_Place_ID = Place_ID
-WHERE (Place_Name LIKE @place_name AND Ticket_Price <= @price_from AND Ticket_price >= @price_to)";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@place_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Place_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_from", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Ticket_Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_to", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Ticket_Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT Tickets.*, Artists.Artist_Name, Artists.Artist_Genre, Places.Place_Name
-FROM Tickets INNER JOIN Concerts
-on Ticket_Concert_ID = Concert_ID,
-Concerts as C1 INNER JOIN Artists
-on C1.Concert_Artist_ID = Artist_ID, 
-Concerts as C2 INNER JOIN Places
-on C2.Concert_Place_ID = Place_ID
-WHERE (Ticket_Price >= @price_from AND Ticket_Price <= @price_to)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_from", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Ticket_Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_to", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Ticket_Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@place_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Place_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7903,7 +7841,7 @@ WHERE (Ticket_Price >= @price_from AND Ticket_Price <= @price_to)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSConcerts.TicketsByCategoryDataTable GetDataArtist(string artist_name) {
+        public virtual DSConcerts.TicketsByCategoryDataTable GetDataByArtist(string artist_name) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((artist_name == null)) {
                 throw new global::System.ArgumentNullException("artist_name");
@@ -7920,8 +7858,32 @@ WHERE (Ticket_Price >= @price_from AND Ticket_Price <= @price_to)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByArtistPlace(DSConcerts.TicketsByCategoryDataTable dataTable, string artist_name, string place_name) {
+        public virtual int FillByAll(DSConcerts.TicketsByCategoryDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DSConcerts.TicketsByCategoryDataTable GetDataByAll() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            DSConcerts.TicketsByCategoryDataTable dataTable = new DSConcerts.TicketsByCategoryDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByArtistPlace(DSConcerts.TicketsByCategoryDataTable dataTable, string artist_name, string place_name) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((artist_name == null)) {
                 throw new global::System.ArgumentNullException("artist_name");
             }
@@ -7946,29 +7908,6 @@ WHERE (Ticket_Price >= @price_from AND Ticket_Price <= @price_to)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DSConcerts.TicketsByCategoryDataTable GetDataByArtistPlace(string artist_name, string place_name) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((artist_name == null)) {
-                throw new global::System.ArgumentNullException("artist_name");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(artist_name));
-            }
-            if ((place_name == null)) {
-                throw new global::System.ArgumentNullException("place_name");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(place_name));
-            }
-            DSConcerts.TicketsByCategoryDataTable dataTable = new DSConcerts.TicketsByCategoryDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByArtistPlacePrice(DSConcerts.TicketsByCategoryDataTable dataTable, string artist_name, string place_name, global::System.Nullable<decimal> price_from, global::System.Nullable<decimal> price_to) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((artist_name == null)) {
                 throw new global::System.ArgumentNullException("artist_name");
@@ -7981,115 +7920,6 @@ WHERE (Ticket_Price >= @price_from AND Ticket_Price <= @price_to)";
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(place_name));
-            }
-            if ((price_from.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((decimal)(price_from.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((price_to.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((decimal)(price_to.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DSConcerts.TicketsByCategoryDataTable GetDataByArtistPlacePrice(string artist_name, string place_name, global::System.Nullable<decimal> price_from, global::System.Nullable<decimal> price_to) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((artist_name == null)) {
-                throw new global::System.ArgumentNullException("artist_name");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(artist_name));
-            }
-            if ((place_name == null)) {
-                throw new global::System.ArgumentNullException("place_name");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(place_name));
-            }
-            if ((price_from.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((decimal)(price_from.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((price_to.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((decimal)(price_to.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            DSConcerts.TicketsByCategoryDataTable dataTable = new DSConcerts.TicketsByCategoryDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByArtistPrice(DSConcerts.TicketsByCategoryDataTable dataTable, string artist_name, global::System.Nullable<decimal> price_from, global::System.Nullable<decimal> price_to) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((artist_name == null)) {
-                throw new global::System.ArgumentNullException("artist_name");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(artist_name));
-            }
-            if ((price_from.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(price_from.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((price_to.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((decimal)(price_to.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DSConcerts.TicketsByCategoryDataTable GetDataByArtistPrice(string artist_name, global::System.Nullable<decimal> price_from, global::System.Nullable<decimal> price_to) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((artist_name == null)) {
-                throw new global::System.ArgumentNullException("artist_name");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(artist_name));
-            }
-            if ((price_from.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(price_from.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((price_to.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((decimal)(price_to.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             DSConcerts.TicketsByCategoryDataTable dataTable = new DSConcerts.TicketsByCategoryDataTable();
             this.Adapter.Fill(dataTable);
@@ -8101,7 +7931,7 @@ WHERE (Ticket_Price >= @price_from AND Ticket_Price <= @price_to)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByPlace(DSConcerts.TicketsByCategoryDataTable dataTable, string place_name) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((place_name == null)) {
                 throw new global::System.ArgumentNullException("place_name");
             }
@@ -8120,120 +7950,12 @@ WHERE (Ticket_Price >= @price_from AND Ticket_Price <= @price_to)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DSConcerts.TicketsByCategoryDataTable GetDataByPlace(string place_name) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((place_name == null)) {
                 throw new global::System.ArgumentNullException("place_name");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(place_name));
-            }
-            DSConcerts.TicketsByCategoryDataTable dataTable = new DSConcerts.TicketsByCategoryDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByPlacePrice(DSConcerts.TicketsByCategoryDataTable dataTable, string place_name, global::System.Nullable<decimal> price_from, global::System.Nullable<decimal> price_to) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
-            if ((place_name == null)) {
-                throw new global::System.ArgumentNullException("place_name");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(place_name));
-            }
-            if ((price_from.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(price_from.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((price_to.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((decimal)(price_to.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DSConcerts.TicketsByCategoryDataTable GetDataByPlacePrice(string place_name, global::System.Nullable<decimal> price_from, global::System.Nullable<decimal> price_to) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
-            if ((place_name == null)) {
-                throw new global::System.ArgumentNullException("place_name");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(place_name));
-            }
-            if ((price_from.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(price_from.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((price_to.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((decimal)(price_to.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            DSConcerts.TicketsByCategoryDataTable dataTable = new DSConcerts.TicketsByCategoryDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByPrice(DSConcerts.TicketsByCategoryDataTable dataTable, global::System.Nullable<decimal> price_from, global::System.Nullable<decimal> price_to) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
-            if ((price_from.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(price_from.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((price_to.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(price_to.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DSConcerts.TicketsByCategoryDataTable GetDataByPrice(global::System.Nullable<decimal> price_from, global::System.Nullable<decimal> price_to) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
-            if ((price_from.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(price_from.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((price_to.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(price_to.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             DSConcerts.TicketsByCategoryDataTable dataTable = new DSConcerts.TicketsByCategoryDataTable();
             this.Adapter.Fill(dataTable);

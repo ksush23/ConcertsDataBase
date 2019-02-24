@@ -22,9 +22,12 @@
     }
 }
 
-namespace ConcertsData.DSConcertsTableAdapters {
-    
-    
+namespace ConcertsData.DSConcertsTableAdapters
+{
+    partial class TicketsByCategoryTableAdapter
+    {
+    }
+
     public partial class ArtistsByCategoryTableAdapter {
     }
 }

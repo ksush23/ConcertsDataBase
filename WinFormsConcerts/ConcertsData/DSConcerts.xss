@@ -7,26 +7,30 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="-15" ViewPortY="-47" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:Places" ZOrder="18" X="1058" Y="319" Height="158" Width="210" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:Concerts" ZOrder="3" X="693" Y="332" Height="181" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
+    <Shape ID="DesignTable:Concerts" ZOrder="2" X="696" Y="273" Height="181" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
     <Shape ID="DesignTable:Artists" ZOrder="4" X="362" Y="82" Height="158" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:Seats" ZOrder="15" X="678" Y="541" Height="181" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
     <Shape ID="DesignTable:Sectors" ZOrder="14" X="999" Y="509" Height="158" Width="218" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:Ticket_States" ZOrder="7" X="43" Y="389" Height="135" Width="259" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:Tickets" ZOrder="11" X="358" Y="402" Height="204" Width="216" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
     <Shape ID="DesignTable:ArtistsByCategory" ZOrder="5" X="24" Y="-8" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="28" OldDataTableHeight="0" SplitterPosition="145" />
-    <Shape ID="DesignTable:TicketsByCategory" ZOrder="1" X="657" Y="3" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
-    <Shape ID="DesignSources:QTAdapter" ZOrder="2" X="1056" Y="72" Height="148" Width="287" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="144" />
+    <Shape ID="DesignSources:QTAdapter" ZOrder="3" X="1056" Y="72" Height="148" Width="287" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="144" />
+    <Shape ID="DesignTable:TicketsByCategory" ZOrder="1" X="709" Y="-12" Height="250" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_Concerts_Places" ZOrder="17" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>1058</X>
-          <Y>404</Y>
+          <Y>462</Y>
         </Point>
         <Point>
-          <X>921</X>
-          <Y>404</Y>
+          <X>907</X>
+          <Y>462</Y>
+        </Point>
+        <Point>
+          <X>907</X>
+          <Y>454</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -38,11 +42,11 @@
         </Point>
         <Point>
           <X>557</X>
-          <Y>349</Y>
+          <Y>290</Y>
         </Point>
         <Point>
-          <X>693</X>
-          <Y>349</Y>
+          <X>696</X>
+          <Y>290</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -73,11 +77,11 @@
     <Connector ID="DesignRelation:FK_Ticket_Concert" ZOrder="10" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>754</X>
-          <Y>513</Y>
+          <X>757</X>
+          <Y>454</Y>
         </Point>
         <Point>
-          <X>754</X>
+          <X>757</X>
           <Y>521</Y>
         </Point>
         <Point>
@@ -122,11 +126,11 @@
         </Point>
         <Point>
           <X>307</X>
-          <Y>357</Y>
+          <Y>298</Y>
         </Point>
         <Point>
-          <X>693</X>
-          <Y>357</Y>
+          <X>696</X>
+          <Y>298</Y>
         </Point>
       </RoutePoints>
     </Connector>
