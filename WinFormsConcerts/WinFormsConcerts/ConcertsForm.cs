@@ -52,6 +52,8 @@ namespace WinFormsConcerts
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            ticketsTableAdapter.Update(concertsDataSet.Tickets);
+            concertsTableAdapter.Update(concertsDataSet.Concerts);
             artistsTableAdapter.Update(concertsDataSet.Artists);
         }
 
@@ -74,7 +76,14 @@ namespace WinFormsConcerts
                         for (int i = 0; i < dataGridViewConcerts.RowCount - 1; i++)
                         {
                             if (id == (int)dataGridViewConcerts.Rows[i].Cells["Concert_Artist_ID"].Value)
+                            {
                                 concertsBindingSource.RemoveAt(i);
+                                for (int j = 0; j < dataGridViewTickets.RowCount - 1; j++)
+                                {
+                                    if (id == (int)dataGridViewTickets.Rows[j].Cells["Ticket_Concert_ID"].Value)
+                                        ticketsBindingSource.RemoveAt(j);
+                                }
+                            }
                         }
                     }
                 }
@@ -137,6 +146,9 @@ namespace WinFormsConcerts
 
         private void savePlacesButton_Click(object sender, EventArgs e)
         {
+            ticketsTableAdapter.Update(concertsDataSet.Tickets);
+            sectorsTableAdapter.Update(concertsDataSet.Sectors);
+            seatsTableAdapter.Update(concertsDataSet.Seats);
             placesTableAdapter.Update(concertsDataSet.Places);
         }
 
@@ -162,14 +174,28 @@ namespace WinFormsConcerts
                             for (int i = 0; i < dataGridViewConcerts.RowCount - 1; i++)
                             {
                                 if (id == (int)dataGridViewConcerts.Rows[i].Cells["Concert_Place_ID"].Value)
+                                {
                                     concertsBindingSource.RemoveAt(i);
+                                    for (int j = 0; j < dataGridViewTickets.RowCount - 1; j++)
+                                    {
+                                        if (id == (int)dataGridViewTickets.Rows[j].Cells["Ticket_Concert_ID"].Value)
+                                            ticketsBindingSource.RemoveAt(j);
+                                    }
+                                }
                             }
 
                         if (sectors_places_count == 0)
                             for (int i = 0; i < dataGridViewSectors.RowCount - 1; i++)
                             {
                                 if (id == (int)dataGridViewSectors.Rows[i].Cells["Sector_Place_ID"].Value)
+                                {
                                     sectorsBindingSource.RemoveAt(i);
+                                    for (int j = 0; j < dataGridViewSeats.RowCount - 1; j++)
+                                    {
+                                        if (id == (int)dataGridViewSeats.Rows[j].Cells["Seat_Sector_ID"].Value)
+                                            seatsBindingSource.RemoveAt(j);
+                                    }
+                                }
                             }
                     }
                 }
@@ -183,6 +209,8 @@ namespace WinFormsConcerts
 
         private void saveSectorsButton_Click(object sender, EventArgs e)
         {
+            ticketsTableAdapter.Update(concertsDataSet.Tickets);
+            seatsTableAdapter.Update(concertsDataSet.Seats);
             sectorsTableAdapter.Update(concertsDataSet.Sectors);
         }
 
@@ -205,7 +233,14 @@ namespace WinFormsConcerts
                         for (int i = 0; i < dataGridViewSeats.RowCount - 1; i++)
                         {
                             if (id == (int)dataGridViewSeats.Rows[i].Cells["Seat_Sector_ID"].Value)
+                            {
                                 seatsBindingSource.RemoveAt(i);
+                                for (int j = 0; j < dataGridViewTickets.RowCount - 1; j++)
+                                {
+                                    if (id == (int)dataGridViewTickets.Rows[j].Cells["Ticket_Concert_ID"].Value)
+                                        ticketsBindingSource.RemoveAt(j);
+                                }
+                            }
                         }
                     }
                 }
@@ -218,6 +253,7 @@ namespace WinFormsConcerts
 
         private void saveSeatsButton_Click(object sender, EventArgs e)
         {
+            ticketsTableAdapter.Update(concertsDataSet.Tickets);
             seatsTableAdapter.Update(concertsDataSet.Seats);
         }
 
@@ -286,7 +322,7 @@ namespace WinFormsConcerts
 
         private void dataGridViewArtistCategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //try
+            try
             {
                 int id = (int)dataGridViewArtist.CurrentRow.Cells["Artist_ID"].Value;
                 string name = (string)dataGridViewArtist.CurrentRow.Cells["artistNameDataGridViewTextBoxColumn"].Value;
@@ -296,9 +332,9 @@ namespace WinFormsConcerts
 
                 concertsDialog.Dispose();
             }
-            //catch
+            catch
             {
-                MessageBox.Show("Помилка переходу до списку виконавців", "Перехід до списку виконавців");
+                //MessageBox.Show("Помилка переходу до списку виконавців", "Перехід до списку виконавців");
             }
         }
 
@@ -336,6 +372,36 @@ namespace WinFormsConcerts
             FormTickets formTickets = new FormTickets();
             formTickets.ShowDialog(this);
             formTickets.Dispose();
+        }
+
+        private void dataGridViewArtist_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Некоректні дані");
+        }
+
+        private void dataGridViewConcerts_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Некоректні дані");
+        }
+
+        private void dataGridViewTickets_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Некоректні дані");
+        }
+
+        private void dataGridViewPlaces_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Некоректні дані");
+        }
+
+        private void dataGridViewSectors_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Некоректні дані");
+        }
+
+        private void dataGridViewSeats_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Некоректні дані");
         }
     }
 }

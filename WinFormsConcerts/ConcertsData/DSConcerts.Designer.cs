@@ -7763,7 +7763,7 @@ on C2.Concert_Artist_ID = Artist_ID,
 Concerts as C3 INNER JOIN Places
 on C3.Concert_Place_ID = Place_ID
 
-WHERE(Artist_Name LIKE @artist_name)";
+WHERE(Artist_Name LIKE @artist_name AND T1.Ticket_ID = T2.Ticket_ID AND C1.Concert_ID = C2.Concert_ID AND C2.Concert_ID = C3.Concert_ID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@artist_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Artist_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
@@ -7779,7 +7779,8 @@ Concerts as C2 INNER JOIN Artists
 on C2.Concert_Artist_ID = Artist_ID,
 Concerts as C3 INNER JOIN Places
 on C3.Concert_Place_ID = Place_ID
-";
+
+WHERE (T1.Ticket_ID = T2.Ticket_ID AND C1.Concert_ID = C2.Concert_ID AND C2.Concert_ID = C3.Concert_ID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -7795,7 +7796,7 @@ on C2.Concert_Artist_ID = Artist_ID,
 Concerts as C3 INNER JOIN Places
 on C3.Concert_Place_ID = Place_ID
 
-WHERE(Artist_Name LIKE @artist_name AND Place_Name LIKE @place_name)";
+WHERE(Artist_Name LIKE @artist_name AND Place_Name LIKE @place_name AND T1.Ticket_ID = T2.Ticket_ID AND C1.Concert_ID = C2.Concert_ID AND C2.Concert_ID = C3.Concert_ID)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@artist_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Artist_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@place_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Place_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7813,7 +7814,7 @@ on C2.Concert_Artist_ID = Artist_ID,
 Concerts as C3 INNER JOIN Places
 on C3.Concert_Place_ID = Place_ID
 
-WHERE(Place_Name LIKE @place_name)";
+WHERE(Place_Name LIKE @place_name AND T1.Ticket_ID = T2.Ticket_ID AND C1.Concert_ID = C2.Concert_ID AND C2.Concert_ID = C3.Concert_ID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@place_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Place_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
